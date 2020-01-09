@@ -1,0 +1,36 @@
+{
+  "name": "figma-theme-ui",
+  "version": "1.0.0",
+  "description": "Turn your Theme UI config into styles",
+  "author": "LekoArts <hello@lekoarts.de>",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-image": "^2.0.0",
+    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@types/theme-ui": "^0.2.6",
+    "cssnano": "^4.1.10",
+    "figma-plugin-ds-svelte": "0.0.9",
+    "json5": "^2.1.1",
+    "parse-color": "^1.0.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-html-bundle": "0.0.3",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-svg": "^2.0.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "svelte": "^3.0.0",
+    "theme-ui": "^0.2.52",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "sirv-cli": "^0.4.4"
+  }
+}
