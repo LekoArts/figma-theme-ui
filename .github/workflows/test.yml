@@ -1,4 +1,4 @@
-name: Build and Test
+name: Test
 on:
   push:
     branches:
@@ -13,10 +13,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - name: yarn install, build, and test
+      - name: Run Jest
         run: |
           yarn install --production=false
-          yarn build
           yarn test
         env:
           CI: true
