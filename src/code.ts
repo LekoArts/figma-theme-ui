@@ -2,7 +2,7 @@ import { addColors, convertColor } from './core/colors'
 import { flattenObject } from './core/utils'
 import { parseConfig } from './core/config'
 
-figma.showUI(__html__, { width: 280, height: 280 })
+figma.showUI(__html__, { width: 300, height: 185 })
 
 figma.ui.onmessage = (msg: IMessage) => {
   const { type, payload } = msg

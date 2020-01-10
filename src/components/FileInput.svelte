@@ -44,8 +44,16 @@
     transition: background-color 0.3s;
   }
 
+  label {
+    overflow: hidden;
+    max-width: 250px;
+  }
+
   label span {
     margin-right: var(--size-xxsmall);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   [type="file"]:focus + label,
