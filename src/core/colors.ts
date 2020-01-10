@@ -1,4 +1,5 @@
 import parse from 'parse-color'
+import { createSolidColor } from './figma'
 
 export const addColors = (colors: IThemeUIColor[]): void => {
   try {
@@ -6,28 +7,8 @@ export const addColors = (colors: IThemeUIColor[]): void => {
       createSolidColor(name, value)
     }
   } catch (error) {
-    throw new Error(error)
+    throw new Error('addColors: Invalid input format')
   }
-}
-
-export const createSolidColor = (name: string, color: RGBA): void => {
-  const style = figma.createPaintStyle()
-
-  figma.createPaintStyle
-  style.name = name
-
-  const { r, g, b, a } = color
-
-  const rgbColor: RGB = { r, g, b }
-  const alpha: number = a
-
-  const solidPaint: SolidPaint = {
-    type: 'SOLID',
-    color: rgbColor,
-    opacity: alpha,
-  }
-
-  style.paints = [solidPaint]
 }
 
 export const convertColor = (color: string): RGBA => {
