@@ -15,7 +15,7 @@ jobs:
           node-version: "12.x"
       - name: yarn install, build, and test
         run: |
-          yarn install
+          yarn install --production=false
           yarn build
           yarn test
         env:
