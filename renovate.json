@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "automerge": true,
   "major": {
     "automerge": false
@@ -18,7 +16,7 @@
     {
       "packagePatterns": ["rollup"],
       "groupName": "rollup"
-    },
+    }
   ],
   "labels": ["renovate"],
   "prHourlyLimit": 4,
