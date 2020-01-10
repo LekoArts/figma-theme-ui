@@ -1,5 +1,30 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "packageRules": [
+    {
+      "packagePatterns": ["^eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "packagePatterns": ["@types"],
+      "groupName": "types"
+    },
+    {
+      "packagePatterns": ["rollup"],
+      "groupName": "rollup"
+    },
+  ],
+  "labels": ["renovate"],
+  "prHourlyLimit": 4,
+  "prConcurrentLimit": 15,
+  "rangeStrategy": "bump",
+  "bumpVersion": null,
+  "semanticCommits": true,
+  "schedule": "on the first day of the month"
 }
