@@ -18,7 +18,7 @@
           payload: {
             options: {
               colors: true,
-              typography: false,
+              typography: true,
               shadows: false
             },
             config

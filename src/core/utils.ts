@@ -14,3 +14,9 @@ export const flattenObject = object => {
   flatten(object)
   return result
 }
+
+export const stringToArray = (str: string): string[] =>
+  str
+    .replace(/\s*,\s*/g, ',')
+    .replace(/"/g, '')
+    .split(',')

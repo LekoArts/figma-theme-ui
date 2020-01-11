@@ -15,5 +15,12 @@ interface IMessage {
   }
 }
 
+interface IFigmaFonts {
+  fontName: {
+    family: string
+    style: string
+  }
+}
+
 declare module 'json5/dist/index.min.js'
 declare module 'parse-color'

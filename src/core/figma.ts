@@ -17,3 +17,25 @@ export const createSolidColor = (name: string, color: RGBA): void => {
 
   style.paints = [solidPaint]
 }
+
+export const createFontStyle = async (
+  name: string,
+  family: string,
+  style: string,
+  fontSize: number,
+  lineHeight: LineHeight
+): Promise<void> => {
+  const fontStyle = figma.createTextStyle()
+
+  const fontName = {
+    family,
+    style,
+  }
+
+  await figma.loadFontAsync(fontName)
+
+  fontStyle.name = name
+  fontStyle.fontName = fontName
+  fontStyle.fontSize = fontSize
+  fontStyle.lineHeight = lineHeight
+}

@@ -1,13 +1,15 @@
 import parse from 'parse-color'
+import { ColorMode } from 'theme-ui'
 import { createSolidColor } from './figma'
+import { flattenObject } from './utils'
 
 export const addColors = (colors: IThemeUIColor[]): void => {
   try {
-    for (const { name, value } of colors) {
-      createSolidColor(name, value)
+    for (let i = 0; i < colors.length; i++) {
+      createSolidColor(colors[i].name, colors[i].value)
     }
   } catch (error) {
-    throw new Error('addColors: Invalid input format')
+    throw new Error(`addColors: Invalid input format. ${error}`)
   }
 }
 
@@ -24,4 +26,12 @@ export const convertColor = (color: string): RGBA => {
     b: rgba[2] / 255,
     a: rgba[3],
   }
+}
+
+export const parseColors = (colors: ColorMode): IThemeUIColor[] => {
+  const flatColors = flattenObject(colors)
+  return Object.keys(flatColors).map(key => ({
+    name: key,
+    value: convertColor(flatColors[key]),
+  }))
 }
