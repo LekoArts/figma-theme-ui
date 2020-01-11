@@ -1,4 +1,4 @@
-import { convertLineHeight } from '../typography'
+import { convertLineHeight, convertFontWeight } from '../typography'
 
 describe('convertLineHeight', () => {
   test('should process number values', () => {
@@ -6,5 +6,11 @@ describe('convertLineHeight', () => {
       value: 150,
       unit: 'PERCENT',
     })
+  })
+})
+
+describe('convertFontWeight', () => {
+  test('should use dictionary to return correct Figma value', () => {
+    expect(convertFontWeight(200)).toEqual('Thin')
   })
 })

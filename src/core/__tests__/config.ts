@@ -3,7 +3,7 @@ import { parseConfig } from '../config'
 const binaryStr = `
 module.exports = {
   fonts: {
-    body: 'system-ui,sans-serif',
+    body: '-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial',
     heading: 'inherit',
     monospace: 'Menlo,monospace',
   },
@@ -32,7 +32,7 @@ describe('parseConfig', () => {
   test('should convert binaryStr to object', () => {
     expect(parseConfig(binaryStr)).toStrictEqual({
       fonts: {
-        body: 'system-ui,sans-serif',
+        body: '-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial',
         heading: 'inherit',
         monospace: 'Menlo,monospace',
       },

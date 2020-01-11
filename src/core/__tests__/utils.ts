@@ -1,4 +1,4 @@
-import { flattenObject } from '../utils'
+import { flattenObject, stringToArray } from '../utils'
 
 const normal = {
   foo: 'bar',
@@ -25,6 +25,8 @@ const twoLevel = {
   },
 }
 
+const str = '-apple-system, "Segoe UI", Roboto'
+
 describe('flattenObject', () => {
   test('should keep flat object intact', () => {
     expect(flattenObject(normal)).toStrictEqual({
@@ -45,5 +47,16 @@ describe('flattenObject', () => {
       'hogwarts.gryffindor.harry': 'potter',
       'hogwarts.slytherin.draco': 'malfoy',
     })
+  })
+})
+
+describe('stringToArray', () => {
+  test('should keep order, handle space before commas and remove quotes', () => {
+    expect(stringToArray(str)).toStrictEqual([
+      '-apple-system',
+      'Segoe UI',
+      'Roboto',
+    ])
+    expect(stringToArray(str)).toHaveLength(3)
   })
 })
