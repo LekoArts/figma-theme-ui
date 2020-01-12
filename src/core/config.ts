@@ -42,6 +42,7 @@ export const parseConfig = (config: string, options: IOptions): Theme => {
     )
     console.log(error.message)
     console.log(error)
+    figma.closePlugin()
     return
   }
 
