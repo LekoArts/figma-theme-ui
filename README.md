@@ -2,6 +2,8 @@
 
 Convert a [Theme UI][theme-ui] config to [Figma Styles][figma-styles].
 
+[Install the plugin](https://www.figma.com/c/plugin/797015796747379907)
+
 ## Usage
 
 Choose a `.js` file that only contains an export and your theme. Example:
