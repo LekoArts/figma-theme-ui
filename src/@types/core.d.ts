@@ -3,14 +3,16 @@ interface IThemeUIColor {
   value: RGBA
 }
 
+interface IOptions {
+  colors: boolean
+  typography: boolean
+  shadows: boolean
+}
+
 interface IMessage {
   type: 'CREATE_STYLES'
   payload: {
-    options: {
-      colors: boolean
-      typography: boolean
-      shadows: boolean
-    }
+    options: IOptions
     config: string
   }
 }
