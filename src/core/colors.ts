@@ -4,12 +4,8 @@ import { createSolidColor } from './figma'
 import { flattenObject } from './utils'
 
 export const addColors = (colors: IThemeUIColor[]): void => {
-  try {
-    for (let i = 0; i < colors.length; i++) {
-      createSolidColor(colors[i].name, colors[i].value)
-    }
-  } catch (error) {
-    throw new Error(`addColors: Invalid input format. ${error}`)
+  for (let i = 0; i < colors.length; i++) {
+    createSolidColor(colors[i].name, colors[i].value)
   }
 }
 

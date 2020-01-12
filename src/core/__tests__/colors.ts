@@ -1,4 +1,4 @@
-import { convertColor, addColors } from '../colors'
+import { convertColor, addColors, parseColors } from '../colors'
 import { createSolidColor } from '../figma'
 
 jest.mock('../figma')
@@ -23,6 +23,15 @@ const exampleColors = [
     },
   },
 ]
+
+const toBeParsedColors = {
+  background: '#fff',
+  text: '#000',
+  brand: {
+    primary: '#663399',
+    secondary: '#000',
+  },
+}
 
 describe('convertColor', () => {
   test('should return RGBA', () => {
@@ -60,8 +69,47 @@ describe('addColors', () => {
     })
     expect(createSolidColor).toHaveBeenCalledTimes(2)
   })
-  test('throws error on invalid input', () => {
-    // @ts-ignore
-    console.log(addColors('wrong'))
+})
+
+describe('parseColors', () => {
+  test('should create an array of objects (in correct IThemeUIColor format)', () => {
+    expect(parseColors(toBeParsedColors)).toStrictEqual([
+      {
+        name: 'background',
+        value: {
+          a: 1,
+          b: 1,
+          g: 1,
+          r: 1,
+        },
+      },
+      {
+        name: 'text',
+        value: {
+          a: 1,
+          b: 0,
+          g: 0,
+          r: 0,
+        },
+      },
+      {
+        name: 'brand.primary',
+        value: {
+          a: 1,
+          b: 0.6,
+          g: 0.2,
+          r: 0.4,
+        },
+      },
+      {
+        name: 'brand.secondary',
+        value: {
+          a: 1,
+          b: 0,
+          g: 0,
+          r: 0,
+        },
+      },
+    ])
   })
 })

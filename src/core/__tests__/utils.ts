@@ -25,6 +25,10 @@ const twoLevel = {
   },
 }
 
+const withNull = {
+  indigo: [null, '#ebf4ff', '#c3dafe'],
+}
+
 const str = '-apple-system, "Segoe UI", Roboto'
 
 describe('flattenObject', () => {
@@ -46,6 +50,12 @@ describe('flattenObject', () => {
       foo: 'bar',
       'hogwarts.gryffindor.harry': 'potter',
       'hogwarts.slytherin.draco': 'malfoy',
+    })
+  })
+  test('should skip null/undefined', () => {
+    expect(flattenObject(withNull)).toStrictEqual({
+      'indigo.1': '#ebf4ff',
+      'indigo.2': '#c3dafe',
     })
   })
 })

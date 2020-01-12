@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 export const createSolidColor = (name: string, color: RGBA): void => {
   const style = figma.createPaintStyle()
 
