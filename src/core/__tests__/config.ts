@@ -30,7 +30,9 @@ module.exports = {
 
 describe('parseConfig', () => {
   test('should convert binaryStr to object', () => {
-    expect(parseConfig(binaryStr)).toStrictEqual({
+    expect(
+      parseConfig(binaryStr, { colors: true, typography: true, shadows: false })
+    ).toStrictEqual({
       fonts: {
         body: '-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial',
         heading: 'inherit',
