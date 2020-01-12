@@ -8,18 +8,38 @@ Choose a `.js` file that only contains an export and your theme. Example:
 
 ```js
 module.exports = {
+  fonts: {
+    body: '-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+    heading: 'inherit',
+  },
+  fontSizes: [12, 14, 16, 20, 24, 32],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
   colors: {
     text: '#000',
-    cool: {
-      one: '#f4f4f4',
-      two: '#f3f3f3'
+    background: '#fff',
+    brand: {
+      primary: '#07c',
+      secondary: '#30c',
     },
-    teal: [null, `#e6fffa`, `#b2f5ea`, `#81e6d9`, `#4fd1c5`, `#38b2ac`, `#319795`, `#2c7a7b`, `#285e61`, `#234e52`],
+    teal: [null, '#e6fffa', '#b2f5ea', '#81e6d9'],
   }
 }
 ```
 
 The shape of the theme has to follow the [theme specification][theme-spec]. Otherwise the plugin can't find your styles.
+More specifically, you'll need to bring the theme into the following shape (as shown above):
+
+- One `module.exports` export, nothing more in the file
+- `fonts`, `fontWeights` and `lineHeights` have to have the same keys (above: `body` and `heading`)
+- `fontSizes` has to be defined as `Array<number>`
+- `fontWeights` and `lineHeights` need to have a `number` as property
 
 Lastly, click "Add Styles" to create your Figma Styles.
 
