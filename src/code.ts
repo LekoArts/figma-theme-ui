@@ -3,7 +3,7 @@ import { parseColors } from './core/colors'
 import { parseConfig } from './core/config'
 import { parseTypography, addTypography } from './core/typography'
 
-figma.showUI(__html__, { width: 300, height: 185 })
+figma.showUI(__html__, { width: 300, height: 220 })
 
 figma.ui.onmessage = async (msg: IMessage) => {
   const { type, payload } = msg

@@ -7,6 +7,8 @@
 
   let config = null;
   let disabled = true;
+  let colorsChecked = true;
+  let typographyChecked = true;
 
   $: disabled = config === null;
 
@@ -17,8 +19,8 @@
           type: "CREATE_STYLES",
           payload: {
             options: {
-              colors: true,
-              typography: true,
+              colors: colorsChecked,
+              typography: typographyChecked,
               shadows: false
             },
             config
@@ -43,7 +45,11 @@
 
 <div class="wrapper p-xsmall">
   <FileInput bind:config />
-  <AddStyles on:click={createStyles} bind:disabled />
+  <AddStyles
+    on:click={createStyles}
+    bind:disabled
+    bind:colorsChecked
+    bind:typographyChecked />
   <div class="mt-medium footer">
     <Type>
       Upload a file with a valid theme
