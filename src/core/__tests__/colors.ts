@@ -60,4 +60,8 @@ describe('addColors', () => {
     })
     expect(createSolidColor).toHaveBeenCalledTimes(2)
   })
+  test('throws error on invalid input', () => {
+    // @ts-ignore
+    console.log(addColors('wrong'))
+  })
 })
