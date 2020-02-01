@@ -21,7 +21,7 @@
     "@types/theme-ui": "^0.2.6",
     "cssnano": "^4.1.10",
     "csstype": "^2.6.8",
-    "figma-plugin-ds-svelte": "0.0.9",
+    "figma-plugin-ds-svelte": "0.1.0",
     "jest": "^24.9.0",
     "json5": "^2.1.1",
     "parse-color": "^1.0.0",

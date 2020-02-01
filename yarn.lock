@@ -1605,10 +1605,10 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-figma-plugin-ds-svelte@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/figma-plugin-ds-svelte/-/figma-plugin-ds-svelte-0.0.9.tgz#b4aab33107e4ba503705824dea596060a9051b16"
-  integrity sha512-8dzb93V9WPZxKVlfA1vbzwh5+oO3UcKBTOo+hgl1i1hWNWBSBmBl59UNJ5a3aHOvISnsMWRnnI6P4wNlz/cPDQ==
+figma-plugin-ds-svelte@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/figma-plugin-ds-svelte/-/figma-plugin-ds-svelte-0.1.0.tgz#d2876cd12cc1d8d04e2f889a21c895572608902d"
+  integrity sha512-cciQf+rvE+knFVRvCFOYLIrKw7Hy5HPzMehqqA2dhUd9TJgYEi6ja2wCoAzzPSM1jPqZh8fPWVGPY82x9QI+Lw==
   dependencies:
     rollup-plugin-postcss "2.0.3"
     rollup-plugin-svg "2.0.0"
