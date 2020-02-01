@@ -138,6 +138,37 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@emotion/hash@0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.7.4.tgz#f14932887422c9056b15a8d222a9074a7dfa2831"
+  integrity sha512-fxfMSBMX3tlIbKUdtGKxqB1fyrH6gVrX39Gsv3y8lRYKUqlgDt3UMqQyGnR1bQMa2B8aGnhLZokZgg8vT0Le+A==
+
+"@emotion/memoize@0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
+  integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
+
+"@emotion/serialize@^0.11.15":
+  version "0.11.15"
+  resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-0.11.15.tgz#9a0f5873fb458d87d4f23e034413c12ed60a705a"
+  integrity sha512-YE+qnrmGwyR+XB5j7Bi+0GT1JWsdcjM/d4POu+TXkcnrRs4RFCCsi3d/Ebf+wSStHqAlTT2+dfd+b9N9EO2KBg==
+  dependencies:
+    "@emotion/hash" "0.7.4"
+    "@emotion/memoize" "0.7.4"
+    "@emotion/unitless" "0.7.5"
+    "@emotion/utils" "0.11.3"
+    csstype "^2.5.7"
+
+"@emotion/unitless@0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
+  integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
+
+"@emotion/utils@0.11.3":
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.11.3.tgz#a759863867befa7e583400d322652a3f44820924"
+  integrity sha512-0o4l6pZC+hI88+bzuaX/6BgOvQVhbt2PfmxauVaYOGgbsAw14wdKyvMCZXnsnsHys94iadcF+RG/wZyx6+ZZBw==
+
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
@@ -398,10 +429,10 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^24.0.25":
-  version "24.0.25"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.25.tgz#2aba377824ce040114aa906ad2cac2c85351360f"
-  integrity sha512-hnP1WpjN4KbGEK4dLayul6lgtys6FPz0UfxMeMQCv0M+sTnzN3ConfiO72jHgLxl119guHgI8gLqDOrRLsyp2g==
+"@types/jest@^24.9.1":
+  version "24.9.1"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.9.1.tgz#02baf9573c78f1b9974a5f36778b366aa77bd534"
+  integrity sha512-Fb38HkXSVA4L8fGKEZ6le5bB8r6MRWlOCZbVuWZcmOMSCd2wCYOwN1ibj8daIoV9naq7aaOZjrLCoCMptKU/4Q==
   dependencies:
     jest-diff "^24.3.0"
 
@@ -454,11 +485,12 @@
   dependencies:
     csstype "^2.6.6"
 
-"@types/theme-ui@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@types/theme-ui/-/theme-ui-0.2.6.tgz#d8e14f6a05ceab0c23c822cf5893a51377f2091c"
-  integrity sha512-QnyTHTIJxCIVOs2g7IAdE20CpwNoaiCXFSJidy09RDq4MUjCH+kjvLbmMigUnq/E9UnjETAoUarqMJe0LAtzlg==
+"@types/theme-ui@^0.2.8":
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/@types/theme-ui/-/theme-ui-0.2.8.tgz#ccfa1a2ee3ec666e5b54756a5a798dee234ba746"
+  integrity sha512-mJi14fyX54j2TZaKX8crvYPQuqZ0CAKRNjO5vwMLizKMYOnbXcgNFWhRZj5NNYjipFzsBp+5J3Rw4uTCSrftpA==
   dependencies:
+    "@emotion/serialize" "^0.11.15"
     "@types/react" "*"
     "@types/styled-system" "*"
     "@types/styled-system__css" "*"
@@ -1237,7 +1269,7 @@ cssstyle@^1.0.0:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.2.0, csstype@^2.6.4, csstype@^2.6.6, csstype@^2.6.8:
+csstype@^2.2.0, csstype@^2.5.7, csstype@^2.6.4, csstype@^2.6.6, csstype@^2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.8.tgz#0fb6fc2417ffd2816a418c9336da74d7f07db431"
   integrity sha512-msVS9qTuMT5zwAGCVm4mxfrZ18BNc6Csd0oJAtiFMZ1FAx1CCvy2+5MDmYoix63LM/6NDbNtodCiGYGmFgO0dA==
