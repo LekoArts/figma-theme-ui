@@ -6,7 +6,6 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public",
     "test": "jest",
     "test:ci": "jest --ci --runInBand",
     "test:coverage": "jest --coverage",
@@ -14,10 +13,10 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-image": "^2.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.0",
+    "@rollup/plugin-image": "^2.0.4",
+    "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-replace": "^2.3.1",
-    "@types/jest": "^24.9.1",
+    "@types/jest": "^25.1.2",
     "@types/theme-ui": "^0.3.0",
     "cssnano": "^4.1.10",
     "csstype": "^2.6.8",
@@ -34,12 +33,9 @@
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
     "superstruct": "^0.8.3",
-    "svelte": "^3.18.1",
+    "svelte": "^3.18.2",
     "ts-jest": "^25.2.0",
     "tslib": "^1.10.0",
     "typescript": "^3.7.5"
-  },
-  "dependencies": {
-    "sirv-cli": "^0.4.5"
   }
 }
