@@ -46,7 +46,7 @@
 <div class="wrapper p-xsmall">
   <FileInput bind:config />
   <AddStyles
-    on:click={createStyles}
+    on:addStyles={createStyles}
     bind:disabled
     bind:colorsChecked
     bind:typographyChecked />
