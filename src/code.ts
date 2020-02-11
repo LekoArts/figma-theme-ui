@@ -9,14 +9,14 @@ figma.ui.onmessage = async (msg: IMessage) => {
   const { type, payload } = msg
 
   const config = parseConfig(payload.config, payload.options)
-  const colors = parseColors(config.colors)
-  const modifiedConfig = await parseTypography(config)
 
   if (type === 'CREATE_STYLES') {
     if (payload.options.colors) {
+      const colors = parseColors(config.colors)
       addColors(colors)
     }
     if (payload.options.typography) {
+      const modifiedConfig = await parseTypography(config)
       await addTypography(modifiedConfig)
     }
   }

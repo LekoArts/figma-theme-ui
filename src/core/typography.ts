@@ -20,7 +20,7 @@ export const addTypography = async (THEME: Theme) => {
       const fontStyleName = `${name}-${THEME.fontSizes[k]}`
       const family = THEME.fonts[name]
       const style = convertFontWeight(THEME.fontWeights[name])
-      const fontSize = THEME.fontSizes[k]
+      const fontSize = THEME.fontSizes[k] as number
       const lineHeight = convertLineHeight(THEME.lineHeights[name])
 
       await createFontStyle(fontStyleName, family, style, fontSize, lineHeight)
