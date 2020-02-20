@@ -6,6 +6,7 @@
 
 .DS_Store
 .idea
+src/build/bundle.js
 
 # Logs
 logs
