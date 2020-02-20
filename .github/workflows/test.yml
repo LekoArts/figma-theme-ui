@@ -16,9 +16,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Install dependencies
+        run: yarn install --production=false
       - name: Run Jest
-        run: |
-          yarn install --production=false
-          yarn test:ci
+        run: yarn test:ci
         env:
           CI: true
+      - name: Run Linting
+        run: yarn lint

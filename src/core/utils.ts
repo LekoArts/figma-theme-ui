@@ -1,10 +1,10 @@
 export const flattenObject = object => {
   const result = {}
-  function flatten(obj, prefix = '') {
+  function flatten(obj, prefix = ``) {
     Object.keys(obj).forEach(key => {
       const value = obj[key]
       if (!value) return false
-      if (typeof value === 'object') {
+      if (typeof value === `object`) {
         flatten(value, `${prefix}${key}.`)
       } else {
         result[`${prefix}${key}`] = value
@@ -17,6 +17,6 @@ export const flattenObject = object => {
 
 export const stringToArray = (str: string): string[] =>
   str
-    .replace(/\s*,\s*/g, ',')
-    .replace(/"/g, '')
-    .split(',')
+    .replace(/\s*,\s*/g, `,`)
+    .replace(/"/g, ``)
+    .split(`,`)

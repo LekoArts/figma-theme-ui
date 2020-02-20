@@ -10,7 +10,7 @@ interface IOptions {
 }
 
 interface IMessage {
-  type: 'CREATE_STYLES'
+  type: "CREATE_STYLES"
   payload: {
     options: IOptions
     config: string
@@ -24,5 +24,5 @@ interface IFigmaFonts {
   }
 }
 
-declare module 'json5/dist/index.min.js'
-declare module 'parse-color'
+declare module "json5/dist/index.min.js"
+declare module "parse-color"

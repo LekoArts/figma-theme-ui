@@ -3,7 +3,6 @@
 export const createSolidColor = (name: string, color: RGBA): void => {
   const style = figma.createPaintStyle()
 
-  figma.createPaintStyle
   style.name = name
 
   const { r, g, b, a } = color
@@ -12,7 +11,7 @@ export const createSolidColor = (name: string, color: RGBA): void => {
   const alpha: number = a
 
   const solidPaint: SolidPaint = {
-    type: 'SOLID',
+    type: `SOLID`,
     color: rgbColor,
     opacity: alpha,
   }

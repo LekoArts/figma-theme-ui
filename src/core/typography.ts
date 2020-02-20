@@ -1,7 +1,7 @@
-import { Theme } from 'theme-ui'
-import * as CSS from 'csstype'
-import { createFontStyle } from './figma'
-import { stringToArray } from './utils'
+import { Theme } from "theme-ui"
+import * as CSS from "csstype"
+import { createFontStyle } from "./figma"
+import { stringToArray } from "./utils"
 
 export const addTypography = async (THEME: Theme) => {
   const keys = Object.keys(THEME.fonts)
@@ -32,21 +32,21 @@ export const convertLineHeight = (lineHeight: number): LineHeight => {
   const valueInPercent = lineHeight * 100
   return {
     value: valueInPercent,
-    unit: 'PERCENT',
+    unit: `PERCENT`,
   }
 }
 
 export const convertFontWeight = (fontWeight: number): string => {
   const dictNumerical = {
-    100: 'ExtraLight',
-    200: 'Thin',
-    300: 'Light',
-    400: 'Regular',
-    500: 'Medium',
-    600: 'Semibold',
-    700: 'Bold',
-    800: 'ExtraBold',
-    900: 'Black',
+    100: `ExtraLight`,
+    200: `Thin`,
+    300: `Light`,
+    400: `Regular`,
+    500: `Medium`,
+    600: `Semibold`,
+    700: `Bold`,
+    800: `ExtraBold`,
+    900: `Black`,
   }
 
   return dictNumerical[fontWeight]
@@ -60,19 +60,14 @@ export const convertFonts = (
   },
   fn: (v: string, k: string, i: number) => unknown
 ) => {
-  if (fonts.heading === 'inherit') {
+  if (fonts.heading === `inherit`) {
     fonts.heading = fonts.body
   }
 
-  return Object.fromEntries(
-    Object.entries(fonts).map(([k, v], i) => [k, fn(v, k, i)])
-  )
+  return Object.fromEntries(Object.entries(fonts).map(([k, v], i) => [k, fn(v, k, i)]))
 }
 
-export const findFigmaFont = (
-  figma: IFigmaFonts[],
-  font: string
-): string | undefined => {
+export const findFigmaFont = (figma: IFigmaFonts[], font: string): string | undefined => {
   const figmaFonts = [...new Set(figma.map(e => e.fontName.family))]
   const configFonts = stringToArray(font)
   const foundFonts = configFonts.filter(f => figmaFonts.includes(f))
@@ -88,9 +83,7 @@ export const parseTypography = async (config: Theme) => {
   const figmaFonts = await figma.listAvailableFontsAsync()
   const configFonts = config.fonts
   //@ts-ignore
-  const convertedFonts = convertFonts(configFonts, v =>
-    findFigmaFont(figmaFonts, v)
-  )
+  const convertedFonts = convertFonts(configFonts, v => findFigmaFont(figmaFonts, v))
 
   const THEME = Object.assign(config, { fonts: convertedFonts })
 

@@ -1,7 +1,7 @@
-import parse from 'parse-color'
-import { ColorMode } from 'theme-ui'
-import { createSolidColor } from './figma'
-import { flattenObject } from './utils'
+import parse from "parse-color"
+import { ColorMode } from "theme-ui"
+import { createSolidColor } from "./figma"
+import { flattenObject } from "./utils"
 
 export const addColors = (colors: IThemeUIColor[]): void => {
   for (let i = 0; i < colors.length; i++) {
@@ -10,8 +10,9 @@ export const addColors = (colors: IThemeUIColor[]): void => {
 }
 
 export const convertColor = (color: string): RGBA => {
-  if (color === 'transparent') {
-    color = 'rgba(0, 0, 0, 0.0)'
+  if (color === `transparent`) {
+    // eslint-disable-next-line no-param-reassign
+    color = `rgba(0, 0, 0, 0.0)`
   }
 
   const { rgba } = parse(color)

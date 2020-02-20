@@ -1,11 +1,11 @@
-import { convertColor, addColors, parseColors } from '../colors'
-import { createSolidColor } from '../figma'
+import { convertColor, addColors, parseColors } from "../colors"
+import { createSolidColor } from "../figma"
 
-jest.mock('../figma')
+jest.mock(`../figma`)
 
 const exampleColors = [
   {
-    name: 'white',
+    name: `white`,
     value: {
       a: 1,
       b: 1,
@@ -14,7 +14,7 @@ const exampleColors = [
     },
   },
   {
-    name: 'black',
+    name: `black`,
     value: {
       a: 1,
       b: 0,
@@ -25,25 +25,25 @@ const exampleColors = [
 ]
 
 const toBeParsedColors = {
-  background: '#fff',
-  text: '#000',
+  background: `#fff`,
+  text: `#000`,
   brand: {
-    primary: '#663399',
-    secondary: '#000',
+    primary: `#663399`,
+    secondary: `#000`,
   },
 }
 
-describe('convertColor', () => {
-  test('should return RGBA', () => {
-    expect(convertColor('#663399')).toEqual({
+describe(`convertColor`, () => {
+  test(`should return RGBA`, () => {
+    expect(convertColor(`#663399`)).toEqual({
       a: 1,
       b: 0.6,
       g: 0.2,
       r: 0.4,
     })
   })
-  test('should work for "transparent"', () => {
-    expect(convertColor('transparent')).toEqual({
+  test(`should work for "transparent"`, () => {
+    expect(convertColor(`transparent`)).toEqual({
       a: 0,
       b: 0,
       g: 0,
@@ -52,16 +52,16 @@ describe('convertColor', () => {
   })
 })
 
-describe('addColors', () => {
-  test('calls createSolidColor correctly', () => {
+describe(`addColors`, () => {
+  test(`calls createSolidColor correctly`, () => {
     addColors(exampleColors)
-    expect(createSolidColor).toHaveBeenCalledWith('white', {
+    expect(createSolidColor).toHaveBeenCalledWith(`white`, {
       a: 1,
       b: 1,
       g: 1,
       r: 1,
     })
-    expect(createSolidColor).toHaveBeenCalledWith('black', {
+    expect(createSolidColor).toHaveBeenCalledWith(`black`, {
       a: 1,
       b: 0,
       g: 0,
@@ -71,11 +71,11 @@ describe('addColors', () => {
   })
 })
 
-describe('parseColors', () => {
-  test('should create an array of objects (in correct IThemeUIColor format)', () => {
+describe(`parseColors`, () => {
+  test(`should create an array of objects (in correct IThemeUIColor format)`, () => {
     expect(parseColors(toBeParsedColors)).toStrictEqual([
       {
-        name: 'background',
+        name: `background`,
         value: {
           a: 1,
           b: 1,
@@ -84,7 +84,7 @@ describe('parseColors', () => {
         },
       },
       {
-        name: 'text',
+        name: `text`,
         value: {
           a: 1,
           b: 0,
@@ -93,7 +93,7 @@ describe('parseColors', () => {
         },
       },
       {
-        name: 'brand.primary',
+        name: `brand.primary`,
         value: {
           a: 1,
           b: 0.6,
@@ -102,7 +102,7 @@ describe('parseColors', () => {
         },
       },
       {
-        name: 'brand.secondary',
+        name: `brand.secondary`,
         value: {
           a: 1,
           b: 0,

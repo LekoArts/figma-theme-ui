@@ -1,72 +1,68 @@
-import { flattenObject, stringToArray } from '../utils'
+import { flattenObject, stringToArray } from "../utils"
 
 const normal = {
-  foo: 'bar',
-  harry: 'potter',
+  foo: `bar`,
+  harry: `potter`,
 }
 
 const oneLevel = {
-  foo: 'bar',
+  foo: `bar`,
   gryffindor: {
-    harry: 'potter',
-    hermione: 'granger',
+    harry: `potter`,
+    hermione: `granger`,
   },
 }
 
 const twoLevel = {
-  foo: 'bar',
+  foo: `bar`,
   hogwarts: {
     gryffindor: {
-      harry: 'potter',
+      harry: `potter`,
     },
     slytherin: {
-      draco: 'malfoy',
+      draco: `malfoy`,
     },
   },
 }
 
 const withNull = {
-  indigo: [null, '#ebf4ff', '#c3dafe'],
+  indigo: [null, `#ebf4ff`, `#c3dafe`],
 }
 
-const str = '-apple-system, "Segoe UI", Roboto'
+const str = `-apple-system, "Segoe UI", Roboto`
 
-describe('flattenObject', () => {
-  test('should keep flat object intact', () => {
+describe(`flattenObject`, () => {
+  test(`should keep flat object intact`, () => {
     expect(flattenObject(normal)).toStrictEqual({
-      foo: 'bar',
-      harry: 'potter',
+      foo: `bar`,
+      harry: `potter`,
     })
   })
-  test('should flatten one level', () => {
+  test(`should flatten one level`, () => {
     expect(flattenObject(oneLevel)).toStrictEqual({
-      foo: 'bar',
-      'gryffindor.harry': 'potter',
-      'gryffindor.hermione': 'granger',
+      foo: `bar`,
+      "gryffindor.harry": `potter`,
+      "gryffindor.hermione": `granger`,
     })
   })
-  test('should flatten more than one level', () => {
+  test(`should flatten more than one level`, () => {
     expect(flattenObject(twoLevel)).toStrictEqual({
-      foo: 'bar',
-      'hogwarts.gryffindor.harry': 'potter',
-      'hogwarts.slytherin.draco': 'malfoy',
+      foo: `bar`,
+      "hogwarts.gryffindor.harry": `potter`,
+      "hogwarts.slytherin.draco": `malfoy`,
     })
   })
-  test('should skip null/undefined', () => {
+  test(`should skip null/undefined`, () => {
     expect(flattenObject(withNull)).toStrictEqual({
-      'indigo.1': '#ebf4ff',
-      'indigo.2': '#c3dafe',
+      "indigo.1": `#ebf4ff`,
+      "indigo.2": `#c3dafe`,
     })
   })
 })
 
-describe('stringToArray', () => {
-  test('should keep order, handle space before commas and remove quotes', () => {
-    expect(stringToArray(str)).toStrictEqual([
-      '-apple-system',
-      'Segoe UI',
-      'Roboto',
-    ])
+describe(`stringToArray`, () => {
+  test(`should keep order, handle space before commas and remove quotes`, () => {
+    expect(stringToArray(str)).toStrictEqual([`-apple-system`, `Segoe UI`, `Roboto`])
     expect(stringToArray(str)).toHaveLength(3)
   })
 })

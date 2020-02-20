@@ -1,25 +1,26 @@
-import JSON5 from 'json5/dist/index.min.js'
-import { Theme } from 'theme-ui'
-import { struct } from 'superstruct'
+/* eslint-disable no-param-reassign */
+import JSON5 from "json5/dist/index.min.js"
+import { Theme } from "theme-ui"
+import { struct } from "superstruct"
 
-const Fonts = struct.record(['string', 'string'])
-const FontSizes = struct.array(['number'])
-const FontWeights = struct.record(['string', 'number'])
-const LineHeights = struct.record(['string', 'number'])
-const ColorProperties = struct.union(['string', 'object', 'array'])
-const Colors = struct.record(['string', ColorProperties])
+const Fonts = struct.record([`string`, `string`])
+const FontSizes = struct.array([`number`])
+const FontWeights = struct.record([`string`, `number`])
+const LineHeights = struct.record([`string`, `number`])
+const ColorProperties = struct.union([`string`, `object`, `array`])
+const Colors = struct.record([`string`, ColorProperties])
 
 export const parseConfig = (config: string, options: IOptions): Theme => {
   // Remove any whitespace
-  config = config.replace(/("[^"\\]*(?:\\.[^"\\]*)*")|\s+/gm, '$1')
+  config = config.replace(/("[^"\\]*(?:\\.[^"\\]*)*")|\s+/gm, `$1`)
   // Backticks to double quotes
-  config = config.replace(/`/g, '"')
+  config = config.replace(/`/g, `'`)
   // Remove semicolon after brace
-  config = config.replace('};', '}')
+  config = config.replace(`};`, `}`)
   // Remove anything before module exports
-  config = config.replace(/^(.*)(?=module.exports)/gi, '')
+  config = config.replace(/^(.*)(?=module.exports)/gi, ``)
   // Remove module.exports=
-  config = config.replace('module.exports=', '')
+  config = config.replace(`module.exports=`, ``)
   // Parsed
   const parsed = JSON5.parse(config)
   const result = JSON.parse(JSON.stringify(parsed))
@@ -39,7 +40,7 @@ export const parseConfig = (config: string, options: IOptions): Theme => {
 
   if (error) {
     figma.notify(
-      'Error parsing your config. Have a look at the Console (Developer Tools) or open an issue on GitHub.',
+      `Error parsing your config. Have a look at the Console (Developer Tools) or open an issue on GitHub.`,
       { timeout: 10000 }
     )
     console.log(error.message)
