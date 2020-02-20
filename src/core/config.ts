@@ -14,6 +14,8 @@ export const parseConfig = (config: string, options: IOptions): Theme => {
   config = config.replace(/("[^"\\]*(?:\\.[^"\\]*)*")|\s+/gm, '$1')
   // Backticks to double quotes
   config = config.replace(/`/g, '"')
+  // Remove semicolon after brace
+  config = config.replace('};', '}')
   // Remove anything before module exports
   config = config.replace(/^(.*)(?=module.exports)/gi, '')
   // Remove module.exports=
