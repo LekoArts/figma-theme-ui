@@ -45,6 +45,6 @@
     "svelte": "^3.19.1",
     "ts-jest": "^25.2.1",
     "tslib": "^1.11.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3"
   }
 }
