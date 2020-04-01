@@ -2202,13 +2202,11 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-figma-plugin-ds-svelte@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/figma-plugin-ds-svelte/-/figma-plugin-ds-svelte-0.1.0.tgz#d2876cd12cc1d8d04e2f889a21c895572608902d"
-  integrity sha512-cciQf+rvE+knFVRvCFOYLIrKw7Hy5HPzMehqqA2dhUd9TJgYEi6ja2wCoAzzPSM1jPqZh8fPWVGPY82x9QI+Lw==
+figma-plugin-ds-svelte@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/figma-plugin-ds-svelte/-/figma-plugin-ds-svelte-1.0.1.tgz#ceb34b9856aca737ffc143a61ba9a6a7f752cee3"
+  integrity sha512-ZgIhgKoKoWLh3eTUHGMGc6AG9hSXdzou6EdUzIeNPwDbErhmYonG9mK39FRFCAVMzLSwHSjfsvO2bYOHPhi8eA==
   dependencies:
-    rollup-plugin-postcss "2.0.3"
-    rollup-plugin-svg "2.0.0"
     svelte-click-outside "^1.0.0"
 
 figures@^3.0.0:
@@ -4783,11 +4781,6 @@ require-relative@^0.8.7:
   resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
   integrity sha1-eZlTn8ngR6N5KPoZb44VY9q9Nt4=
 
-reserved-words@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"
-  integrity sha1-AKCUD5jNUBrqqsMWQR2a3FKzGrE=
-
 resolve-cwd@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-3.0.0.tgz#0f0075f1bb2544766cf73ba6a6e2adfebcb13f2d"
@@ -4876,26 +4869,6 @@ rollup-plugin-livereload@^1.1.0:
   dependencies:
     livereload "0.8.0 || ^0.8.2"
 
-rollup-plugin-postcss@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-postcss/-/rollup-plugin-postcss-2.0.3.tgz#1fd5b7e1fc7545cb0084d9c99d11b259e41a05e6"
-  integrity sha512-d12oKl6za/GGXmlytzVPzzTdPCKgti/Kq2kNhtfm5vv9hkNbyrTvizMBm6zZ5rRWX/sIWl3znjIJ8xy6Hofoeg==
-  dependencies:
-    chalk "^2.4.2"
-    concat-with-sourcemaps "^1.0.5"
-    cssnano "^4.1.8"
-    import-cwd "^2.1.0"
-    p-queue "^2.4.2"
-    pify "^3.0.0"
-    postcss "^7.0.14"
-    postcss-load-config "^2.0.0"
-    postcss-modules "^1.4.1"
-    promise.series "^0.2.0"
-    reserved-words "^0.1.2"
-    resolve "^1.5.0"
-    rollup-pluginutils "^2.0.1"
-    style-inject "^0.3.0"
-
 rollup-plugin-postcss@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-postcss/-/rollup-plugin-postcss-2.5.0.tgz#54ef2487cda498d8bca69aaca3b55b30dee0106b"
@@ -4925,7 +4898,7 @@ rollup-plugin-svelte@^5.2.0:
     rollup-pluginutils "^2.8.2"
     sourcemap-codec "^1.4.8"
 
-rollup-plugin-svg@2.0.0, rollup-plugin-svg@^2.0.0:
+rollup-plugin-svg@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-svg/-/rollup-plugin-svg-2.0.0.tgz#ce11b55e915d5b2190328c4e6632bd6b4fe12ee9"
   integrity sha512-DmE7dSQHo1SC5L2uH2qul3Mjyd5oV6U1aVVkyvTLX/mUsRink7f1b1zaIm+32GEBA6EHu8H/JJi3DdWqM53ySQ==
