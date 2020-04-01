@@ -24,3 +24,5 @@ jobs:
           CI: true
       - name: Run Linting
         run: yarn lint
+      - name: Run a test build
+        run: yarn build
