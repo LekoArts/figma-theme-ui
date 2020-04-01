@@ -27,7 +27,7 @@ export const convertColor = (color: string): RGBA => {
 
 export const parseColors = (colors: ColorMode): IThemeUIColor[] => {
   const flatColors = flattenObject(colors)
-  return Object.keys(flatColors).map(key => ({
+  return Object.keys(flatColors).map((key) => ({
     name: key,
     value: convertColor(flatColors[key]),
   }))

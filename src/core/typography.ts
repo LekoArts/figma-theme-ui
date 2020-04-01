@@ -68,9 +68,9 @@ export const convertFonts = (
 }
 
 export const findFigmaFont = (figma: IFigmaFonts[], font: string): string | undefined => {
-  const figmaFonts = [...new Set(figma.map(e => e.fontName.family))]
+  const figmaFonts = [...new Set(figma.map((e) => e.fontName.family))]
   const configFonts = stringToArray(font)
-  const foundFonts = configFonts.filter(f => figmaFonts.includes(f))
+  const foundFonts = configFonts.filter((f) => figmaFonts.includes(f))
 
   if (foundFonts.length === 0) {
     return undefined
@@ -83,7 +83,7 @@ export const parseTypography = async (config: Theme) => {
   const figmaFonts = await figma.listAvailableFontsAsync()
   const configFonts = config.fonts
   //@ts-ignore
-  const convertedFonts = convertFonts(configFonts, v => findFigmaFont(figmaFonts, v))
+  const convertedFonts = convertFonts(configFonts, (v) => findFigmaFont(figmaFonts, v))
 
   const THEME = Object.assign(config, { fonts: convertedFonts })
 

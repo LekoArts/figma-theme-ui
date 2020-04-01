@@ -58,13 +58,13 @@ describe(`convertFontWeight`, () => {
 
 describe(`convertFonts`, () => {
   test(`should handle "inherit" on heading`, () => {
-    expect(convertFonts(fonts, v => v)).toHaveProperty(
+    expect(convertFonts(fonts, (v) => v)).toHaveProperty(
       `heading`,
       `-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial`
     )
   })
   test(`should use second arg (function) to change the values`, () => {
-    expect(convertFonts(fonts, v => v.toUpperCase())).toStrictEqual({
+    expect(convertFonts(fonts, (v) => v.toUpperCase())).toStrictEqual({
       body: `-APPLE-SYSTEM,"SEGOE UI",ROBOTO,"HELVETICA NEUE",ARIAL`,
       heading: `-APPLE-SYSTEM,"SEGOE UI",ROBOTO,"HELVETICA NEUE",ARIAL`,
     })
