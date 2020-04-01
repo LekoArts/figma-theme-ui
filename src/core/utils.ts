@@ -1,7 +1,7 @@
-export const flattenObject = object => {
+export const flattenObject = (object) => {
   const result = {}
   function flatten(obj, prefix = ``) {
-    Object.keys(obj).forEach(key => {
+    Object.keys(obj).forEach((key) => {
       const value = obj[key]
       if (!value) return false
       if (typeof value === `object`) {

@@ -11,8 +11,9 @@ Choose a `.js` file that only contains an export and your theme. Example:
 ```js
 module.exports = {
   fonts: {
-    body: '-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
-    heading: 'inherit',
+    body:
+      '-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+    heading: "inherit",
   },
   fontSizes: [12, 14, 16, 20, 24, 32],
   fontWeights: {
@@ -24,15 +25,15 @@ module.exports = {
     heading: 1.125,
   },
   colors: {
-    text: '#000',
-    background: '#fff',
+    text: "#000",
+    background: "#fff",
     brand: {
-      primary: '#07c',
-      secondary: '#30c',
+      primary: "#07c",
+      secondary: "#30c",
     },
-    teal: [null, '#e6fffa', '#b2f5ea', '#81e6d9'],
-  }
-}
+    teal: [null, "#e6fffa", "#b2f5ea", "#81e6d9"],
+  },
+};
 ```
 
 The shape of the theme has to follow the [theme specification][theme-spec]. Otherwise the plugin can't find your styles.
