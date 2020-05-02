@@ -1,11 +1,5 @@
 import { parseConfig } from "../config"
 
-// @ts-ignore
-global.figma = {
-  notify: jest.fn(() => `Test return`),
-  closePlugin: jest.fn(() => `Plugin closed`),
-}
-
 const binaryStr = `
 module.exports = {
   fonts: {
@@ -96,7 +90,27 @@ module.exports = {
 }
 `
 
+const invalidStr = `
+module.exports = {
+  space: 'test'
+}
+`
+
 describe(`parseConfig`, () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+    // @ts-ignore
+    global.figma = {
+      notify: jest.fn(),
+      closePlugin: jest.fn(),
+    }
+
+    // @ts-ignore
+    global.console = {
+      log: jest.fn(),
+    }
+  })
+
   test(`should convert binaryStr to object`, () => {
     expect(parseConfig(binaryStr, { colors: true, typography: true, shadows: false })).toStrictEqual({
       fonts: {
@@ -193,5 +207,22 @@ describe(`parseConfig`, () => {
         heading: 1.125,
       },
     })
+  })
+  test(`should throw error on invalid schema`, () => {
+    parseConfig(invalidStr, { colors: true, typography: true, shadows: true })
+    expect(global.console.log).toHaveBeenCalledTimes(2)
+    // @ts-ignore
+    expect(global.figma.notify).toHaveBeenCalledTimes(1)
+    expect(
+      // @ts-ignore
+      global.figma.notify
+    ).toHaveBeenCalledWith(
+      `Error parsing your config. Have a look at the Console (Developer Tools) or open an issue on GitHub.`,
+      { timeout: 10000 }
+    )
+    expect(
+      // @ts-ignore
+      global.figma.closePlugin
+    ).toHaveBeenCalledTimes(1)
   })
 })

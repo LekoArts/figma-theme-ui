@@ -5,4 +5,7 @@ module.exports = {
     "^.+\\.(ts|tsx)$": `ts-jest`,
   },
   verbose: true,
+  globals: {
+    figma: true,
+  },
 }

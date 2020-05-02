@@ -1,4 +1,4 @@
-// Figma Plugin API version 1, update 9
+// Figma Plugin API version 1, update 14
 
 declare global {
   // Global variable with Figma's plugin API.
@@ -122,9 +122,10 @@ declare global {
   }
 
   interface ViewportAPI {
-    center: { x: number; y: number }
+    center: Vector
     zoom: number
     scrollAndZoomIntoView(nodes: ReadonlyArray<BaseNode>): void
+    readonly bounds: Rect
   }
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -135,6 +136,13 @@ declare global {
   interface Vector {
     readonly x: number
     readonly y: number
+  }
+
+  interface Rect {
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
   }
 
   interface RGB {
@@ -402,7 +410,7 @@ declare global {
     readonly duration: number
   }
 
-  export type Transition = SimpleTransition | DirectionalTransition
+  type Transition = SimpleTransition | DirectionalTransition
 
   type Trigger =
     | { readonly type: "ON_CLICK" | "ON_HOVER" | "ON_PRESS" | "ON_DRAG" }
@@ -449,6 +457,7 @@ declare global {
     // be a name related to your plugin. Other plugins will be able to read this data.
     getSharedPluginData(namespace: string, key: string): string
     setSharedPluginData(namespace: string, key: string, value: string): void
+    setRelaunchData(data: { [command: string]: /* description */ string }): void
   }
 
   interface SceneNodeMixin {
@@ -462,7 +471,19 @@ declare global {
     appendChild(child: SceneNode): void
     insertChild(index: number, child: SceneNode): void
 
+    findChildren(callback?: (node: SceneNode) => boolean): SceneNode[]
+    findChild(callback: (node: SceneNode) => boolean): SceneNode | null
+
+    /**
+     * If you only need to search immediate children, it is much faster
+     * to call node.children.filter(callback) or node.findChildren(callback)
+     */
     findAll(callback?: (node: SceneNode) => boolean): SceneNode[]
+
+    /**
+     * If you only need to search immediate children, it is much faster
+     * to call node.children.find(callback) or node.findChild(callback)
+     */
     findOne(callback: (node: SceneNode) => boolean): SceneNode | null
   }
 
@@ -479,8 +500,9 @@ declare global {
 
     readonly width: number
     readonly height: number
+    constrainProportions: boolean
 
-    layoutAlign: "MIN" | "CENTER" | "MAX" // applicable only inside auto-layout frames
+    layoutAlign: "MIN" | "CENTER" | "MAX" | "STRETCH" // applicable only inside auto-layout frames
 
     resize(width: number, height: number): void
     resizeWithoutConstraints(width: number, height: number): void
@@ -495,11 +517,8 @@ declare global {
   }
 
   interface ContainerMixin {
+    expanded: boolean
     backgrounds: ReadonlyArray<Paint> // DEPRECATED: use 'fills' instead
-    layoutGrids: ReadonlyArray<LayoutGrid>
-    clipsContent: boolean
-    guides: ReadonlyArray<Guide>
-    gridStyleId: string
     backgroundStyleId: string // DEPRECATED: use 'fillStyleId' instead
   }
 
@@ -511,12 +530,14 @@ declare global {
     fills: ReadonlyArray<Paint> | PluginAPI["mixed"]
     strokes: ReadonlyArray<Paint>
     strokeWeight: number
+    strokeMiterLimit: number
     strokeAlign: "CENTER" | "INSIDE" | "OUTSIDE"
     strokeCap: StrokeCap | PluginAPI["mixed"]
     strokeJoin: StrokeJoin | PluginAPI["mixed"]
     dashPattern: ReadonlyArray<number>
     fillStyleId: string | PluginAPI["mixed"]
     strokeStyleId: string
+    outlineStroke(): VectorNode | null
   }
 
   interface CornerMixin {
@@ -537,7 +558,7 @@ declare global {
   }
 
   interface ReactionMixin {
-    readonly reactions: ReadonlyArray<Reaction> // PROPOSED API ONLY
+    readonly reactions: ReadonlyArray<Reaction>
   }
 
   interface DefaultShapeMixin
@@ -568,12 +589,17 @@ declare global {
     verticalPadding: number // applicable only if layoutMode != "NONE"
     itemSpacing: number // applicable only if layoutMode != "NONE"
 
-    overflowDirection: OverflowDirection // PROPOSED API ONLY
-    numberOfFixedChildren: number // PROPOSED API ONLY
+    layoutGrids: ReadonlyArray<LayoutGrid>
+    gridStyleId: string
+    clipsContent: boolean
+    guides: ReadonlyArray<Guide>
 
-    readonly overlayPositionType: OverlayPositionType // PROPOSED API ONLY
-    readonly overlayBackground: OverlayBackground // PROPOSED API ONLY
-    readonly overlayBackgroundInteraction: OverlayBackgroundInteraction // PROPOSED API ONLY
+    overflowDirection: OverflowDirection
+    numberOfFixedChildren: number
+
+    readonly overlayPositionType: OverlayPositionType
+    readonly overlayBackground: OverlayBackground
+    readonly overlayBackgroundInteraction: OverlayBackgroundInteraction
   }
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -586,8 +612,19 @@ declare global {
 
     appendChild(child: PageNode): void
     insertChild(index: number, child: PageNode): void
+    findChildren(callback?: (node: PageNode) => boolean): Array<PageNode>
+    findChild(callback: (node: PageNode) => boolean): PageNode | null
 
+    /**
+     * If you only need to search immediate children, it is much faster
+     * to call node.children.filter(callback) or node.findChildren(callback)
+     */
     findAll(callback?: (node: PageNode | SceneNode) => boolean): Array<PageNode | SceneNode>
+
+    /**
+     * If you only need to search immediate children, it is much faster
+     * to call node.children.find(callback) or node.findChild(callback)
+     */
     findOne(callback: (node: PageNode | SceneNode) => boolean): PageNode | SceneNode | null
   }
 
@@ -597,10 +634,11 @@ declare global {
 
     guides: ReadonlyArray<Guide>
     selection: ReadonlyArray<SceneNode>
+    selectedTextRange: { node: TextNode; start: number; end: number } | null
 
     backgrounds: ReadonlyArray<Paint>
 
-    readonly prototypeStartNode: FrameNode | GroupNode | ComponentNode | InstanceNode | null // PROPOSED API ONLY
+    readonly prototypeStartNode: FrameNode | GroupNode | ComponentNode | InstanceNode | null
   }
 
   interface FrameNode extends DefaultFrameMixin {
@@ -666,7 +704,6 @@ declare global {
   interface TextNode extends DefaultShapeMixin, ConstraintMixin {
     readonly type: "TEXT"
     clone(): TextNode
-    characters: string
     readonly hasMissingFont: boolean
     textAlignHorizontal: "LEFT" | "CENTER" | "RIGHT" | "JUSTIFIED"
     textAlignVertical: "TOP" | "CENTER" | "BOTTOM"
@@ -682,6 +719,10 @@ declare global {
     textDecoration: TextDecoration | PluginAPI["mixed"]
     letterSpacing: LetterSpacing | PluginAPI["mixed"]
     lineHeight: LineHeight | PluginAPI["mixed"]
+
+    characters: string
+    insertCharacters(start: number, characters: string, useStyle?: "BEFORE" | "AFTER"): void
+    deleteCharacters(start: number, end: number): void
 
     getRangeFontSize(start: number, end: number): number | PluginAPI["mixed"]
     setRangeFontSize(start: number, end: number, value: number): void
@@ -717,12 +758,15 @@ declare global {
     readonly type: "INSTANCE"
     clone(): InstanceNode
     masterComponent: ComponentNode
+    scaleFactor: number
   }
 
   interface BooleanOperationNode extends DefaultShapeMixin, ChildrenMixin, CornerMixin {
     readonly type: "BOOLEAN_OPERATION"
     clone(): BooleanOperationNode
     booleanOperation: "UNION" | "INTERSECT" | "SUBTRACT" | "EXCLUDE"
+
+    expanded: boolean
   }
 
   type BaseNode = DocumentNode | PageNode | SceneNode
