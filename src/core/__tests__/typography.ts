@@ -1,4 +1,4 @@
-import { convertLineHeight, convertFontWeight, convertFonts, findFigmaFont } from "../typography"
+import { convertLineHeight, convertFontWeight, convertFonts, findFigmaFont, parseTypography } from "../typography"
 
 const fonts = {
   body: `-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial`,
@@ -41,6 +41,38 @@ const figmaFontsFail = [
   },
 ]
 
+const theme = {
+  fonts: {
+    body: `-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`,
+    heading: `inherit`,
+  },
+  fontSizes: [12, 14, 16, 20, 24, 32],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+}
+
+const parsedTheme = {
+  fonts: {
+    body: `Segoe UI`,
+    heading: `Segoe UI`,
+  },
+  fontSizes: [12, 14, 16, 20, 24, 32],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+}
+
 describe(`convertLineHeight`, () => {
   test(`should process number values`, () => {
     expect(convertLineHeight(1.5)).toStrictEqual({
@@ -78,5 +110,29 @@ describe(`findFigmaFont`, () => {
   test(`should return one result that is also first in the input font string`, () => {
     expect(findFigmaFont(figmaFontsSuccess, fonts.body)).toBe(`Segoe UI`)
     expect(findFigmaFont(figmaFontsSuccess, fonts.body)).not.toBe(`Roboto`)
+  })
+})
+
+describe(`parseTypography`, () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+    // @ts-ignore
+    global.figma = {
+      listAvailableFontsAsync: jest.fn(() => [
+        {
+          fontName: {
+            family: `Segoe UI`,
+            style: `Regular`,
+          },
+        },
+      ]),
+    }
+  })
+
+  test(`should do X`, async () => {
+    const THEME = await parseTypography(theme)
+    // @ts-ignore
+    expect(global.figma.listAvailableFontsAsync).toHaveBeenCalledTimes(1)
+    expect(THEME).toStrictEqual(parsedTheme)
   })
 })

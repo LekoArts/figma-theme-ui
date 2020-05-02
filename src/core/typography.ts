@@ -1,7 +1,7 @@
 import { Theme } from "theme-ui"
-import * as CSS from "csstype"
 import { createFontStyle } from "./figma"
 import { stringToArray } from "./utils"
+import { IConvertFonts } from "../@types/typography"
 
 export const addTypography = async (THEME: Theme) => {
   const keys = Object.keys(THEME.fonts)
@@ -52,19 +52,12 @@ export const convertFontWeight = (fontWeight: number): string => {
   return dictNumerical[fontWeight]
 }
 
-export const convertFonts = (
-  fonts: {
-    body: string
-    heading?: string
-    [K: string]: CSS.FontFamilyProperty
-  },
-  fn: (v: string, k: string, i: number) => unknown
-) => {
+export const convertFonts = (fonts: IConvertFonts["fonts"], fn: (v: string, k: string, i: number) => unknown) => {
   if (fonts.heading === `inherit`) {
     fonts.heading = fonts.body
   }
 
-  return Object.fromEntries(Object.entries(fonts).map(([k, v], i) => [k, fn(v, k, i)]))
+  return Object.fromEntries(Object.entries(fonts).map(([k, v], i) => [k, fn(v as string, k, i)]))
 }
 
 export const findFigmaFont = (figma: IFigmaFonts[], font: string): string | undefined => {
@@ -82,7 +75,7 @@ export const findFigmaFont = (figma: IFigmaFonts[], font: string): string | unde
 export const parseTypography = async (config: Theme) => {
   const figmaFonts = await figma.listAvailableFontsAsync()
   const configFonts = config.fonts
-  //@ts-ignore
+
   const convertedFonts = convertFonts(configFonts, (v) => findFigmaFont(figmaFonts, v))
 
   const THEME = Object.assign(config, { fonts: convertedFonts })
