@@ -1,6 +1,5 @@
 <script>
-  import { GlobalCSS } from "figma-plugin-ds-svelte";
-  import { Type } from "figma-plugin-ds-svelte";
+  import { GlobalCSS, Type, Button } from "figma-plugin-ds-svelte";
 
   import AddStyles from "./components/AddStyles.svelte";
   import FileInput from "./components/FileInput.svelte";
