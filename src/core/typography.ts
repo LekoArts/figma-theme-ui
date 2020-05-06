@@ -78,7 +78,5 @@ export const parseTypography = async (config: Theme) => {
 
   const convertedFonts = convertFonts(configFonts, (v) => findFigmaFont(figmaFonts, v))
 
-  const THEME = Object.assign(config, { fonts: convertedFonts })
-
-  return THEME
+  return Object.assign(config, { fonts: convertedFonts })
 }

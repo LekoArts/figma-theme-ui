@@ -129,7 +129,7 @@ describe(`parseTypography`, () => {
     }
   })
 
-  test(`should do X`, async () => {
+  test(`should create parsed theme`, async () => {
     const THEME = await parseTypography(theme)
     // @ts-ignore
     expect(global.figma.listAvailableFontsAsync).toHaveBeenCalledTimes(1)
