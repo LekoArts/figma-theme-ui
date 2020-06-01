@@ -2325,10 +2325,10 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-figma-plugin-ds-svelte@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/figma-plugin-ds-svelte/-/figma-plugin-ds-svelte-1.0.2.tgz#770a8e05523e7dea7e4451c6201881709bb8466e"
-  integrity sha512-VRDnhiZBv5Bqnzpoj+ib+xL8TueQCj6cCREXRbn/WsJg4jklRXzgbiPLq+GnVKyMZLDSe0qD7Au1uGhSg6r1iw==
+figma-plugin-ds-svelte@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/figma-plugin-ds-svelte/-/figma-plugin-ds-svelte-1.0.4.tgz#e57c34d60667942cb899cdcdba3a09c7aacee77f"
+  integrity sha512-zTwstL94hbrcFwaq3HnbBtnKCZs5j/cYRfAsKHnORgy3x10edZa9/EoVW+tF+HKPqHvYcCVyEIhVeGE8eH7t7A==
   dependencies:
     svelte-click-outside "^1.0.0"
 
