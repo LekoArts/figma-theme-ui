@@ -38,14 +38,14 @@ describe(`flattenObject`, () => {
       harry: `potter`,
     })
   })
-  test(`should flatten one level`, () => {
+  test(`should group things in one level`, () => {
     expect(flattenObject(oneLevel)).toStrictEqual({
       foo: `bar`,
       "gryffindor / harry": `potter`,
       "gryffindor / hermione": `granger`,
     })
   })
-  test(`should flatten more than one level`, () => {
+  test(`should make groups for more than one level`, () => {
     expect(flattenObject(twoLevel)).toStrictEqual({
       foo: `bar`,
       "hogwarts / gryffindor / harry": `potter`,
