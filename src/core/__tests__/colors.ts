@@ -93,7 +93,7 @@ describe(`parseColors`, () => {
         },
       },
       {
-        name: `brand.primary`,
+        name: `brand / primary`,
         value: {
           a: 1,
           b: 0.6,
@@ -102,7 +102,7 @@ describe(`parseColors`, () => {
         },
       },
       {
-        name: `brand.secondary`,
+        name: `brand / secondary`,
         value: {
           a: 1,
           b: 0,
