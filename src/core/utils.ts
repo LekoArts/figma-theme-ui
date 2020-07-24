@@ -1,4 +1,4 @@
-export const flattenObject = (object) => {
+export const flattenObject = (object: Record<string, unknown>): Record<string, unknown> => {
   const result = {}
   function flatten(obj, prefix = ``) {
     Object.keys(obj).forEach((key) => {
