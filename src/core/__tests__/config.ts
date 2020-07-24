@@ -208,8 +208,42 @@ describe(`parseConfig`, () => {
       },
     })
   })
-  test(`should throw error on invalid schema`, () => {
+  test(`should throw error on completely invalid schema`, () => {
     parseConfig(invalidStr, { colors: true, typography: true, shadows: true })
+    expect(global.console.log).toHaveBeenCalledTimes(2)
+    // @ts-ignore
+    expect(global.figma.notify).toHaveBeenCalledTimes(1)
+    expect(
+      // @ts-ignore
+      global.figma.notify
+    ).toHaveBeenCalledWith(
+      `Error parsing your config. Have a look at the Console (Developer Tools) or open an issue on GitHub.`,
+      { timeout: 10000 }
+    )
+    expect(
+      // @ts-ignore
+      global.figma.closePlugin
+    ).toHaveBeenCalledTimes(1)
+  })
+  test(`should throw error on wrong colors schema`, () => {
+    parseConfig(binaryStrTypo, { colors: true, typography: false, shadows: false })
+    expect(global.console.log).toHaveBeenCalledTimes(2)
+    // @ts-ignore
+    expect(global.figma.notify).toHaveBeenCalledTimes(1)
+    expect(
+      // @ts-ignore
+      global.figma.notify
+    ).toHaveBeenCalledWith(
+      `Error parsing your config. Have a look at the Console (Developer Tools) or open an issue on GitHub.`,
+      { timeout: 10000 }
+    )
+    expect(
+      // @ts-ignore
+      global.figma.closePlugin
+    ).toHaveBeenCalledTimes(1)
+  })
+  test(`should throw error on wrong typography schema`, () => {
+    parseConfig(binaryStrColors, { colors: false, typography: true, shadows: false })
     expect(global.console.log).toHaveBeenCalledTimes(2)
     // @ts-ignore
     expect(global.figma.notify).toHaveBeenCalledTimes(1)
