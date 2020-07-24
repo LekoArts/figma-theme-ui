@@ -5,7 +5,7 @@ export const flattenObject = (object) => {
       const value = obj[key]
       if (!value) return false
       if (typeof value === `object`) {
-        flatten(value, `${prefix}${key} / `)
+        flatten(value, `${prefix}${key}/`)
       } else {
         result[`${prefix}${key}`] = value
       }
