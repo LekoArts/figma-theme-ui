@@ -3,7 +3,7 @@ import { createFontStyle } from "./figma"
 import { stringToArray } from "./utils"
 import { IConvertFonts } from "../@types/typography"
 
-export const addTypography = async (THEME: Theme) => {
+export const addTypography = async (THEME: Theme): Promise<void> => {
   const keys = Object.keys(THEME.fonts)
 
   for (let i = 0; i < keys.length; i++) {
@@ -52,7 +52,10 @@ export const convertFontWeight = (fontWeight: number): string => {
   return dictNumerical[fontWeight]
 }
 
-export const convertFonts = (fonts: IConvertFonts["fonts"], fn: (v: string, k: string, i: number) => unknown) => {
+export const convertFonts = (
+  fonts: IConvertFonts["fonts"],
+  fn: (v: string, k: string, i: number) => unknown
+): { [p: string]: unknown } => {
   if (fonts.heading === `inherit`) {
     fonts.heading = fonts.body
   }
@@ -72,7 +75,7 @@ export const findFigmaFont = (figma: IFigmaFonts[], font: string): string | unde
   return foundFonts[0]
 }
 
-export const parseTypography = async (config: Theme) => {
+export const parseTypography = async (config: Theme): Promise<Theme & { fonts: { [p: string]: unknown } }> => {
   const figmaFonts = await figma.listAvailableFontsAsync()
   const configFonts = config.fonts
 
