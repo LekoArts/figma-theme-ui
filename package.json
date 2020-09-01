@@ -43,7 +43,7 @@
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript": "^1.0.1",
     "superstruct": "^0.10.12",
-    "svelte": "^3.24.0",
+    "svelte": "^3.24.1",
     "ts-jest": "^26.1.4",
     "tslib": "^2.0.0",
     "typescript": "^3.9.7"
