@@ -44,7 +44,7 @@
     "rollup-plugin-typescript": "^1.0.1",
     "superstruct": "^0.10.12",
     "svelte": "^3.24.1",
-    "ts-jest": "^26.1.4",
+    "ts-jest": "^26.3.0",
     "tslib": "^2.0.1",
     "typescript": "^3.9.7"
   }
