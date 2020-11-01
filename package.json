@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "cssnano": "^4.1.10",
-    "csstype": "^3.0.3",
+    "csstype": "^3.0.4",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.1",
