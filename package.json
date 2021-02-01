@@ -42,7 +42,7 @@
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript": "^1.0.1",
-    "superstruct": "^0.13.1",
+    "superstruct": "^0.13.3",
     "svelte": "^3.31.0",
     "ts-jest": "^26.4.4",
     "tslib": "^2.0.3",
