@@ -1,10 +1,6 @@
 module.exports = {
   parser: `@typescript-eslint/parser`, // Specifies the ESLint parser
-  extends: [
-    `plugin:@typescript-eslint/recommended`,
-    `plugin:import/typescript`,
-    `plugin:prettier/recommended`,
-  ],
+  extends: [`plugin:@typescript-eslint/recommended`, `plugin:import/typescript`, `plugin:prettier/recommended`],
   plugins: [`@typescript-eslint`, `prettier`],
   parserOptions: {
     ecmaVersion: 2019, // Allows for the parsing of modern ECMAScript features
