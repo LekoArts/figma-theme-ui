@@ -5777,10 +5777,10 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
-superstruct@^0.15.1:
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.15.1.tgz#8a8c5175941debe08baa2abd6541784e46870333"
-  integrity sha512-amjQaSpO94o3DTcNgeuYhGYGbji6JLLnySbxyolXO+WtV+bwwK1IzKAet/jYcpltGg2nnX8CBnHpueYNyx2Cgw==
+superstruct@^0.15.2:
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.15.2.tgz#ab7fb84c455a9d7da84c11cfd82c85a4fee9dfff"
+  integrity sha512-OsJI8lv6/PsInwCf4ultejmsJYseYshKhkcbDendqNwj3MeGXENajl3ujMGMU4FDDSSeJTOwFn9T6pnfsS9DYA==
 
 supports-color@^5.3.0:
   version "5.5.0"
