@@ -2752,10 +2752,10 @@ fsevents@^2.1.2, fsevents@~2.1.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.1.2.tgz#4c0a1fb34bc68e543b4b82a9ec392bfbda840805"
   integrity sha512-R4wDiBwZ0KzpgOWetKDug1FZcYhqYnUYKtfZYt4mD5SBz76q0KR4Q9o7GIPamsVPGmW3EYPPJ0dOOjvx32ldZA==
 
-fsevents@~2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.1.tgz#b209ab14c61012636c8863507edf7fb68cc54e9f"
-  integrity sha512-YR47Eg4hChJGAB1O3yEAOkGO+rlzutoICGqGo9EZ4lKWokzZRSyIW1QmTzqjtw8MJdj9srP869CuWw/hyzSiBw==
+fsevents@~2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -5476,10 +5476,10 @@ rollup-plugin-html-bundle@0.0.3:
   resolved "https://registry.yarnpkg.com/rollup-plugin-html-bundle/-/rollup-plugin-html-bundle-0.0.3.tgz#bc75043fde76e2a8eac9d2e10f2a3cb23ae67cc3"
   integrity sha512-vGMJTnpb57cT8p/BL2igUdohEAofxebRujd11Fk1ZY2zE0xGa3YMvzX4PH1kRUKm4nuQvFeW3ZdIksB9ZGzurw==
 
-rollup-plugin-livereload@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-livereload/-/rollup-plugin-livereload-2.0.0.tgz#d3928d74e8cf2ae4286c5dd46b770fd3f3b82313"
-  integrity sha512-oC/8NqumGYuphkqrfszOHUUIwzKsaHBICw6QRwT5uD07gvePTS+HW+GFwu6f9K8W02CUuTvtIM9AWJrbj4wE1A==
+rollup-plugin-livereload@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-livereload/-/rollup-plugin-livereload-2.0.5.tgz#4747fa292a2cceb0c972c573d71b3d66b4252b37"
+  integrity sha512-vqQZ/UQowTW7VoiKEM5ouNW90wE5/GZLfdWuR0ELxyKOJUIaj+uismPZZaICU4DnWPVjnpCDDxEqwU7pcKY/PA==
   dependencies:
     livereload "^0.9.1"
 
@@ -5550,12 +5550,12 @@ rollup-pluginutils@^2.5.0, rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.50.5:
-  version "2.50.5"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.50.5.tgz#bbee9d6411af3f5fa5c6e7e2c69f7a65b753e568"
-  integrity sha512-Ztz4NurU2LbS3Jn5rlhnYv35z6pkjBUmYKr94fOBIKINKRO6kug9NTFHArT7jqwMP2kqEZ39jJuEtkk91NBltQ==
+rollup@^2.52.4:
+  version "2.52.4"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.52.4.tgz#0150247d54fb2f21be4915b898f8764389fea292"
+  integrity sha512-AXgUxxWXyGfsj8GKleR1k8KsG8G+7ZZDRU9RZb9PnLGSyTqI/1qf/+QSp1hRaR40j4yfBCKXs5khtGKiFwihfg==
   optionalDependencies:
-    fsevents "~2.3.1"
+    fsevents "~2.3.2"
 
 rsvp@^4.8.4:
   version "4.8.5"
