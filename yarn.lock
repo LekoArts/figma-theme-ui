@@ -669,10 +669,10 @@
     magic-string "^0.25.7"
     resolve "^1.17.0"
 
-"@rollup/plugin-image@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-image/-/plugin-image-2.0.6.tgz#2e6d7a72b25df81aa80c8c0866d45a45c1e6a265"
-  integrity sha512-bB+spXogbPiFjhBS7i8ajUOgOnVwWK3bnJ6VroxKey/q8/EPRkoSh+4O1qPCw97qMIDspF4TlzXVBhZ7nojIPw==
+"@rollup/plugin-image@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-image/-/plugin-image-2.1.0.tgz#55a477f07af04b1b0caf63f098568a8bf8b1fa8f"
+  integrity sha512-IiRhjv65A4Rb/9R+gTP2JdIciumkc8c+3xFoUfw3PUkX77SqqzvJ028AfX856E3ZdExMrqY9C9ZVXN46w6rh9A==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     mini-svg-data-uri "^1.2.3"
@@ -5559,10 +5559,10 @@ rollup-pluginutils@^2.5.0, rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.52.6:
-  version "2.52.6"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.52.6.tgz#7c7546d170dead0e7db0b6c709f7f34398498a8e"
-  integrity sha512-H+Xudmwf8KO+xji8njQNoIQRp8l+iQge/NdUR20JngTxVYdEEnlpkMvQ71YGLl3+xZcPecmdj4q2lrClKaPdRA==
+rollup@^2.55.1:
+  version "2.55.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.55.1.tgz#66a444648e2fb603d8e329e77a61c608a6510fda"
+  integrity sha512-1P9w5fpb6b4qroePh8vHKGIvPNxwoCQhjJpIqfZGHLKpZ0xcU2/XBmFxFbc9697/6bmHpmFTLk5R1dAQhFSo0g==
   optionalDependencies:
     fsevents "~2.3.2"
 
