@@ -19,7 +19,7 @@
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@rollup/plugin-replace": "^2.4.2",
     "@types/jest": "^26.0.24",
-    "@types/node": "^13.13.51",
+    "@types/node": "^14.17.9",
     "@types/theme-ui": "^0.3.7",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
