@@ -26,8 +26,10 @@ export default [
     },
     plugins: [
       svelte({
-        // enable run-time checks when not in production
-        dev: !production,
+        compilerOptions: {
+          // enable run-time checks when not in production
+          dev: !production,
+        },
       }),
 
       // If you have external dependencies installed from
@@ -77,7 +79,10 @@ export default [
     plugins: [
       typescript(),
       replace({
-        "process.env.NODE_ENV": production ? JSON.stringify(`production`) : JSON.stringify(`development`),
+        values: {
+          "process.env.NODE_ENV": production ? JSON.stringify(`production`) : JSON.stringify(`development`),
+        },
+        preventAssignment: true,
       }),
       commonjs(),
       resolve({
