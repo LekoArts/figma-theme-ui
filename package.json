@@ -33,7 +33,7 @@
     "jest": "^27.3.1",
     "json5": "^2.2.0",
     "parse-color": "^1.0.0",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.4",
     "prettier": "^2.4.1",
     "rollup": "^2.59.0",
     "rollup-plugin-html-bundle": "0.0.3",
