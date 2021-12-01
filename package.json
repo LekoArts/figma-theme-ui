@@ -27,7 +27,7 @@
     "csstype": "^3.0.10",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "figma-plugin-ds-svelte": "1.2.0",
     "jest": "^27.3.1",
