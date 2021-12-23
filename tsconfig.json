@@ -3,6 +3,11 @@
     "target": "es6",
     "lib": ["es2019"],
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@figma"
+    ],
+    "skipLibCheck": true
   }
 }
