@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import JSON5 from "json5/dist/index.min.js"
-import { Theme } from "theme-ui"
+import type { Theme } from "theme-ui"
 import { string, number, object, array, record, union, optional, validate } from "superstruct"
 
 const Fonts = record(string(), string())

@@ -1,0 +1,8 @@
+{
+  "name": "Theme UI",
+  "id": "797015796747379907",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"]
+}
