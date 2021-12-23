@@ -20,9 +20,10 @@ const mainConfig = {
   output: {
     format: `iife`,
     name: `ui`,
-    file: `src/build/bundle.js`,
+    file: `dist/bundle.js`,
   },
   plugins: [
+    typescript(),
     svelte({
       compilerOptions: {
         dev: !production,
@@ -30,7 +31,7 @@ const mainConfig = {
     }),
     resolve({
       browser: true,
-      dedupe: (importee) => importee === `svelte` || importee.startsWith(`svelte/`),
+      dedupe: [`svelte`],
     }),
     commonjs(),
     svg(),
@@ -82,6 +83,7 @@ const codeConfig = {
     commonjs(),
     resolve({
       browser: true,
+      dedupe: [`svelte`],
     }),
     production && terser(),
   ],
