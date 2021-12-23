@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { GlobalCSS, Type } from "figma-plugin-ds-svelte";
 
   import AddStyles from "./components/AddStyles.svelte";
@@ -32,7 +32,6 @@
 </script>
 
 <style>
-  /* Add additional global or scoped styles here */
   .wrapper {
     text-align: center;
   }

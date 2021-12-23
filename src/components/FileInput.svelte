@@ -1,5 +1,5 @@
-<script>
-  import { Button, Type, Icon, IconTheme } from "figma-plugin-ds-svelte";
+<script lang="ts">
+  import { Icon, IconTheme } from "figma-plugin-ds-svelte";
 
   let files = null;
   export let config = null;

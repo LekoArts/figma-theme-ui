@@ -16,11 +16,11 @@ const production = !process.env.ROLLUP_WATCH
  * @type {import('rollup').RollupOptions}
  */
 const mainConfig = {
-  input: `src/main.js`,
+  input: `src/main.ts`,
   output: {
     format: `iife`,
     name: `ui`,
-    file: `dist/bundle.js`,
+    file: `lib/bundle.js`,
   },
   plugins: [
     typescript(),

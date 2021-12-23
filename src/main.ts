@@ -1,3 +1,4 @@
+import "svelte"
 import App from "./PluginUI.svelte"
 
 const app = new App({
