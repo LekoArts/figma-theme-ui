@@ -2,7 +2,6 @@ import svelte from "rollup-plugin-svelte"
 import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import replace from "@rollup/plugin-replace"
-import livereload from "rollup-plugin-livereload"
 import { terser } from "rollup-plugin-terser"
 import svg from "rollup-plugin-svg"
 import typescript from "@rollup/plugin-typescript"
@@ -20,7 +19,7 @@ const mainConfig = {
   output: {
     format: `iife`,
     name: `ui`,
-    file: `lib/bundle.js`,
+    file: `dist/bundle.js`,
   },
   plugins: [
     typescript(),
@@ -33,7 +32,9 @@ const mainConfig = {
       browser: true,
       dedupe: [`svelte`],
     }),
-    commonjs(),
+    commonjs({
+      transformMixedEsModules: true,
+    }),
     svg(),
     postcss({
       extensions: [`.css`],
@@ -44,18 +45,10 @@ const mainConfig = {
       target: `dist/ui.html`,
       inline: true,
     }),
-
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
-
-    // Watch the `dist` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload(`dist`),
-
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
+    production &&
+      terser({
+        ecma: 5,
+      }),
   ],
   watch: {
     clearScreen: false,
@@ -73,18 +66,20 @@ const codeConfig = {
     name: `code`,
   },
   plugins: [
-    typescript(),
     replace({
       values: {
-        "process.env.NODE_ENV": production ? JSON.stringify(`production`) : JSON.stringify(`development`),
+        "process.env.NODE_ENV": JSON.stringify(production ? `production` : `development`),
       },
       preventAssignment: true,
     }),
-    commonjs(),
     resolve({
       browser: true,
       dedupe: [`svelte`],
     }),
+    commonjs({
+      transformMixedEsModules: true,
+    }),
+    typescript(),
     production && terser(),
   ],
 }
@@ -92,20 +87,3 @@ const codeConfig = {
 const config = [mainConfig, codeConfig]
 
 export default config
-
-function serve() {
-  let started = false
-
-  return {
-    writeBundle() {
-      if (!started) {
-        started = true
-
-        require(`child_process`).spawn(`npm`, [`run`, `start`, `--`, `--dev`], {
-          stdio: [`ignore`, `inherit`, `inherit`],
-          shell: true,
-        })
-      }
-    },
-  }
-}
