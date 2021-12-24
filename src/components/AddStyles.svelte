@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Checkbox } from "figma-plugin-ds-svelte";
   import { createEventDispatcher } from "svelte";
 

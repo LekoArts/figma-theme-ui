@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["es2019"],
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@figma"

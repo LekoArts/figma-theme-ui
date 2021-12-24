@@ -1,7 +1,7 @@
-import { Theme } from "theme-ui"
+import type { Theme } from "theme-ui"
 import { createFontStyle } from "./figma"
 import { stringToArray } from "./utils"
-import { IConvertFonts } from "../@types/typography"
+import type { IConvertFonts } from "../@types/typography"
 
 export const addTypography = async (THEME: Theme): Promise<void> => {
   const keys = Object.keys(THEME.fonts)

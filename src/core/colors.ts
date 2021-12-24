@@ -1,5 +1,5 @@
 import parse from "parse-color"
-import { ColorMode } from "theme-ui"
+import type { ColorMode } from "theme-ui"
 import { createSolidColor } from "./figma"
 import { flattenObject } from "./utils"
 

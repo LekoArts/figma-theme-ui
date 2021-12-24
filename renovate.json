@@ -16,6 +16,10 @@
     {
       "packagePatterns": ["rollup"],
       "groupName": "rollup"
+    },
+    {
+      "matchPackagePatterns": ["^superstruct"],
+      "excludePackageNames": ["superstruct"]
     }
   ],
   "labels": ["renovate"],

@@ -1,11 +1,10 @@
 import { parseConfig } from "../config"
 
-const binaryStr = `
-module.exports = {
+const configDefault = JSON.stringify({
   fonts: {
-    body: '-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial',
-    heading: 'inherit',
-    monospace: 'Menlo,monospace',
+    body: `-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial`,
+    heading: `inherit`,
+    monospace: `Menlo,monospace`,
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -18,22 +17,31 @@ module.exports = {
     heading: 1.125,
   },
   colors: {
-    text: '#000',
+    text: `#000`,
     cool: {
-      one: '#f4f4f4',
-      two: '#f3f3f3'
+      one: `#f4f4f4`,
+      two: `#f3f3f3`,
     },
-    teal: [null, '#e6fffa', '#b2f5ea', '#81e6d9', '#4fd1c5', '#38b2ac', '#319795', '#2c7a7b', '#285e61', '#234e52'],
-  }
-}
-`
+    teal: [null, `#e6fffa`, `#b2f5ea`, `#81e6d9`, `#4fd1c5`, `#38b2ac`, `#319795`, `#2c7a7b`, `#285e61`, `#234e52`],
+  },
+})
 
-const binaryStrSemiWhitespace = `
-module.exports = {
+const configColors = JSON.stringify({
+  colors: {
+    text: `#000`,
+    cool: {
+      one: `#f4f4f4`,
+      two: `#f3f3f3`,
+    },
+    teal: [null, `#e6fffa`, `#b2f5ea`, `#81e6d9`, `#4fd1c5`, `#38b2ac`, `#319795`, `#2c7a7b`, `#285e61`, `#234e52`],
+  },
+})
+
+const configTypography = JSON.stringify({
   fonts: {
-    body: '-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial',
-    heading: 'inherit',
-    monospace: 'Menlo,monospace',
+    body: `-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial`,
+    heading: `inherit`,
+    monospace: `Menlo,monospace`,
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -45,56 +53,11 @@ module.exports = {
     body: 1.5,
     heading: 1.125,
   },
-  colors: {
-    text: '#000',
-    cool: {
-      one: '#f4f4f4',
-      two: '#f3f3f3'
-    },
-    teal: [null, '#e6fffa', '#b2f5ea', '#81e6d9', '#4fd1c5', '#38b2ac', '#319795', '#2c7a7b', '#285e61', '#234e52'],
-  }
-};
+})
 
-`
-
-const binaryStrColors = `
-module.exports = {
-  colors: {
-    text: '#000',
-    cool: {
-      one: '#f4f4f4',
-      two: '#f3f3f3'
-    },
-    teal: [null, '#e6fffa', '#b2f5ea', '#81e6d9', '#4fd1c5', '#38b2ac', '#319795', '#2c7a7b', '#285e61', '#234e52'],
-  }
-}
-`
-
-const binaryStrTypo = `
-module.exports = {
-  fonts: {
-    body: '-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial',
-    heading: 'inherit',
-    monospace: 'Menlo,monospace',
-  },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700,
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
-  },
-}
-`
-
-const invalidStr = `
-module.exports = {
-  space: 'test'
-}
-`
+const configInvalid = JSON.stringify({
+  space: `test`,
+})
 
 describe(`parseConfig`, () => {
   beforeEach(() => {
@@ -111,8 +74,8 @@ describe(`parseConfig`, () => {
     }
   })
 
-  test(`should convert binaryStr to object`, () => {
-    expect(parseConfig(binaryStr, { colors: true, typography: true, shadows: false })).toStrictEqual({
+  test(`should convert default config to valid config`, () => {
+    expect(parseConfig(configDefault, { colors: true, typography: true, shadows: false })).toStrictEqual({
       fonts: {
         body: `-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial`,
         heading: `inherit`,
@@ -138,36 +101,9 @@ describe(`parseConfig`, () => {
       },
     })
   })
-  test(`should handle whitespace and semicolons`, () => {
-    expect(parseConfig(binaryStrSemiWhitespace, { colors: true, typography: true, shadows: false })).toStrictEqual({
-      fonts: {
-        body: `-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial`,
-        heading: `inherit`,
-        monospace: `Menlo,monospace`,
-      },
-      fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-      fontWeights: {
-        body: 400,
-        heading: 700,
-        bold: 700,
-      },
-      lineHeights: {
-        body: 1.5,
-        heading: 1.125,
-      },
-      colors: {
-        text: `#000`,
-        cool: {
-          one: `#f4f4f4`,
-          two: `#f3f3f3`,
-        },
-        teal: [null, `#e6fffa`, `#b2f5ea`, `#81e6d9`, `#4fd1c5`, `#38b2ac`, `#319795`, `#2c7a7b`, `#285e61`, `#234e52`],
-      },
-    })
-  })
-  test(`should convert binaryStrColors to object with only colors`, () => {
+  test(`should convert config to object with only colors`, () => {
     expect(
-      parseConfig(binaryStrColors, {
+      parseConfig(configColors, {
         colors: true,
         typography: false,
         shadows: false,
@@ -183,9 +119,9 @@ describe(`parseConfig`, () => {
       },
     })
   })
-  test(`should convert binaryStrTypo to object with only typography`, () => {
+  test(`should convert typography to object with only typography`, () => {
     expect(
-      parseConfig(binaryStrTypo, {
+      parseConfig(configTypography, {
         colors: false,
         typography: true,
         shadows: false,
@@ -209,7 +145,7 @@ describe(`parseConfig`, () => {
     })
   })
   test(`should throw error on completely invalid schema`, () => {
-    parseConfig(invalidStr, { colors: true, typography: true, shadows: true })
+    parseConfig(configInvalid, { colors: true, typography: true, shadows: true })
     expect(global.console.log).toHaveBeenCalledTimes(2)
     // @ts-ignore
     expect(global.figma.notify).toHaveBeenCalledTimes(1)
@@ -226,7 +162,7 @@ describe(`parseConfig`, () => {
     ).toHaveBeenCalledTimes(1)
   })
   test(`should throw error on wrong colors schema`, () => {
-    parseConfig(binaryStrTypo, { colors: true, typography: false, shadows: false })
+    parseConfig(configTypography, { colors: true, typography: false, shadows: false })
     expect(global.console.log).toHaveBeenCalledTimes(2)
     // @ts-ignore
     expect(global.figma.notify).toHaveBeenCalledTimes(1)
@@ -243,7 +179,7 @@ describe(`parseConfig`, () => {
     ).toHaveBeenCalledTimes(1)
   })
   test(`should throw error on wrong typography schema`, () => {
-    parseConfig(binaryStrColors, { colors: false, typography: true, shadows: false })
+    parseConfig(configColors, { colors: false, typography: true, shadows: false })
     expect(global.console.log).toHaveBeenCalledTimes(2)
     // @ts-ignore
     expect(global.figma.notify).toHaveBeenCalledTimes(1)

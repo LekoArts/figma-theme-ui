@@ -1,7 +1,5 @@
 /node_modules/
-/public/build/
-/public/code.js
-/public/index.html
+/dist
 /coverage
 
 .DS_Store
