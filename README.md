@@ -35,7 +35,8 @@ Choose a `.json` file that only contains your theme. Example:
 }
 ```
 
-The shape of the theme has to follow the [theme specification][theme-spec]. Otherwise the plugin can't find your styles.
+The shape of the theme has to follow the [theme specification][theme-spec]. Otherwise the plugin can't find your styles. In your frontend code you can setup your bundler to be able to load `.json` files so that you can directly use it for your Theme UI config. This way the file is interchangeable.
+
 More specifically, you'll need to bring the theme into the following shape (as shown above):
 
 - `fonts`, `fontWeights` and `lineHeights` have to have the same keys (above: `body` and `heading`)
@@ -58,7 +59,7 @@ And build the plugin:
 yarn build
 ```
 
-Go to your "Plugins" tab inside Figma and press the "+" button on "Development". Choose the `manifest.json` file inside `public` folder.
+Go to your "Plugins" tab inside Figma and press the "+" button on "Development". Choose the `manifest.json` file inside `figma-theme-ui` folder.
 
 You now can open the plugin in any project. Run `yarn dev` to have rollup watch your changes. You'll need to re-open the plugin after every change.
 

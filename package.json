@@ -13,9 +13,12 @@
     "test:watch": "jest --watch",
     "lint": "eslint --ignore-path .gitignore . --ext .ts,.js",
     "lint:fix": "yarn lint --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "changeset": "changeset"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.2",
+    "@changesets/cli": "^2.19.0",
     "@figma/plugin-typings": "^1.40.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
