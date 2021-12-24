@@ -10,17 +10,6 @@ const ColorProperties = union([string(), object(), array()])
 const Colors = record(string(), ColorProperties)
 
 export const parseConfig = (config: string, options: IOptions): Theme => {
-  // Remove any whitespace
-  config = config.replace(/("[^"\\]*(?:\\.[^"\\]*)*")|\s+/gm, `$1`)
-  // Backticks to single quotes
-  config = config.replace(/`/g, `'`)
-  // Remove semicolon after brace
-  config = config.replace(`};`, `}`)
-  // Remove anything before module exports
-  config = config.replace(/^(.*)(?=module.exports)/gi, ``)
-  // Remove module.exports=
-  config = config.replace(`module.exports=`, ``)
-  // Parsed
   const result = JSON.parse(config)
 
   const hasTypography = options.typography
