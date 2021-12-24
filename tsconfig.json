@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["dom"],
     "esModuleInterop": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,

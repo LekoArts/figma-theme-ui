@@ -6,40 +6,38 @@ Convert a [Theme UI][theme-ui] config to [Figma Styles][figma-styles].
 
 ## Usage
 
-Choose a `.js` file that only contains an export and your theme. Example:
+Choose a `.json` file that only contains your theme. Example:
 
-```js
-module.exports = {
-  fonts: {
-    body:
-      '-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
-    heading: "inherit",
+```json
+{
+  "fonts": {
+    "body": "-apple-system, BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'",
+    "heading": "inherit"
   },
-  fontSizes: [12, 14, 16, 20, 24, 32],
-  fontWeights: {
-    body: 400,
-    heading: 700,
+  "fontSizes": [12, 14, 16, 20, 24, 32],
+  "fontWeights": {
+    "body": 400,
+    "heading": 700
   },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
+  "lineHeights": {
+    "body": 1.5,
+    "heading": 1.125
   },
-  colors: {
-    text: "#000",
-    background: "#fff",
-    brand: {
-      primary: "#07c",
-      secondary: "#30c",
+  "colors": {
+    "text": "rgb(0,0,0)",
+    "background": "#fff",
+    "brand": {
+      "primary": "hsl(205, 100%, 40%)",
+      "secondary": "#30c"
     },
-    teal: [null, "#e6fffa", "#b2f5ea", "#81e6d9"],
-  },
-};
+    "teal": [null, "#e6fffa", "#b2f5ea", "#81e6d9"]
+  }
+}
 ```
 
 The shape of the theme has to follow the [theme specification][theme-spec]. Otherwise the plugin can't find your styles.
 More specifically, you'll need to bring the theme into the following shape (as shown above):
 
-- One `module.exports` export, nothing more in the file
 - `fonts`, `fontWeights` and `lineHeights` have to have the same keys (above: `body` and `heading`)
 - `fontSizes` has to be defined as `Array<number>`
 - `fontWeights` and `lineHeights` need to have a `number` as property

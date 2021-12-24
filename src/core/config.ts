@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-import JSON5 from "json5/dist/index.min.js"
 import type { Theme } from "theme-ui"
 import { string, number, object, array, record, union, optional, validate } from "superstruct"
 
@@ -13,7 +12,7 @@ const Colors = record(string(), ColorProperties)
 export const parseConfig = (config: string, options: IOptions): Theme => {
   // Remove any whitespace
   config = config.replace(/("[^"\\]*(?:\\.[^"\\]*)*")|\s+/gm, `$1`)
-  // Backticks to double quotes
+  // Backticks to single quotes
   config = config.replace(/`/g, `'`)
   // Remove semicolon after brace
   config = config.replace(`};`, `}`)
@@ -22,8 +21,7 @@ export const parseConfig = (config: string, options: IOptions): Theme => {
   // Remove module.exports=
   config = config.replace(`module.exports=`, ``)
   // Parsed
-  const parsed = JSON5.parse(config)
-  const result = JSON.parse(JSON.stringify(parsed))
+  const result = JSON.parse(config)
 
   const hasTypography = options.typography
   const hasColors = options.colors

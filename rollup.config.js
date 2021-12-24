@@ -30,11 +30,9 @@ const mainConfig = {
     }),
     resolve({
       browser: true,
-      dedupe: [`svelte`],
+      dedupe: (importee) => importee === `svelte` || importee.startsWith(`svelte/`),
     }),
-    commonjs({
-      transformMixedEsModules: true,
-    }),
+    commonjs(),
     svg(),
     postcss({
       extensions: [`.css`],
@@ -45,10 +43,7 @@ const mainConfig = {
       target: `dist/ui.html`,
       inline: true,
     }),
-    production &&
-      terser({
-        ecma: 5,
-      }),
+    production && terser(),
   ],
   watch: {
     clearScreen: false,
@@ -66,20 +61,17 @@ const codeConfig = {
     name: `code`,
   },
   plugins: [
+    typescript(),
     replace({
       values: {
         "process.env.NODE_ENV": JSON.stringify(production ? `production` : `development`),
       },
       preventAssignment: true,
     }),
+    commonjs(),
     resolve({
       browser: true,
-      dedupe: [`svelte`],
     }),
-    commonjs({
-      transformMixedEsModules: true,
-    }),
-    typescript(),
     production && terser(),
   ],
 }
