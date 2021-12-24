@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  master:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,5 +24,5 @@ jobs:
           CI: true
       - name: Run Linting
         run: yarn lint
-      - name: Run a test build
+      - name: Run Test Build
         run: yarn build
