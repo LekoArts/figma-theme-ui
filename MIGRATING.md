@@ -33,3 +33,5 @@ You'll need to convert this file to a valid JSON file named `colors.json`:
 ```
 
 You can use a [JSON validator](https://jsonformatter.curiousconcept.com) to check your JSON. In your frontend code (depending on your bundler/framework setup) you can now import the `colors.json` and use it instead of your previous JavaScript file.
+
+The same pattern also applies to a `config.js` you might have with a full Theme UI config. You'll need to convert the JavaScript object to a valid JSON file and use that starting with v2.
