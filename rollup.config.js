@@ -1,13 +1,13 @@
-import svelte from "rollup-plugin-svelte"
 import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import replace from "@rollup/plugin-replace"
+import typescript from "@rollup/plugin-typescript"
+import html from "@rollup/plugin-html"
+import svelte from "rollup-plugin-svelte"
 import { terser } from "rollup-plugin-terser"
 import svg from "rollup-plugin-svg"
-import typescript from "@rollup/plugin-typescript"
 import postcss from "rollup-plugin-postcss"
 import cssnano from "cssnano"
-import htmlBundle from "rollup-plugin-html-bundle"
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -38,10 +38,22 @@ const mainConfig = {
       extensions: [`.css`],
       plugins: [cssnano()],
     }),
-    htmlBundle({
-      template: `src/template.html`,
-      target: `dist/ui.html`,
-      inline: true,
+    html({
+      fileName: `ui.html`,
+      template({ bundle }) {
+        return `
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Theme UI</title>
+  </head>
+  <body>
+    <script>${bundle[`bundle.js`].code}</script>
+  </body>
+</html>
+        `
+      },
     }),
     production && terser(),
   ],
