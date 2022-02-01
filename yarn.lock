@@ -812,10 +812,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@figma/plugin-typings@^1.40.0":
-  version "1.40.0"
-  resolved "https://registry.yarnpkg.com/@figma/plugin-typings/-/plugin-typings-1.40.0.tgz#b3ee30ec862870095ea97160270113139b1d122c"
-  integrity sha512-PA73qVIn6KFVpnJkt2xNbCpaxx04pXs9eu22JH2123O7Mu17ARLDlXE+tt1ikACfsS6aEGsStI3IFPks+yomVA==
+"@figma/plugin-typings@^1.42.1":
+  version "1.42.1"
+  resolved "https://registry.yarnpkg.com/@figma/plugin-typings/-/plugin-typings-1.42.1.tgz#b9999c3d162db9b3d384c609b15ed18e49b0540f"
+  integrity sha512-TQy81xtgcNWhu2uSiOZIxzGOC8Y/9rcP04GLp2f5MGg/LOH5BPNIkc8mRYPqInwcgQTnvxDpirr8MpYQPYRwDQ==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.2"
