@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "cssnano": "^5.1.5",
-    "csstype": "^3.0.10",
+    "csstype": "^3.0.11",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-import": "^2.25.4",
