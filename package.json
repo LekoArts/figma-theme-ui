@@ -41,7 +41,7 @@
     "parse-color": "^1.0.0",
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",
-    "rollup": "^2.75.4",
+    "rollup": "^2.75.5",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-svg": "^2.0.0",
