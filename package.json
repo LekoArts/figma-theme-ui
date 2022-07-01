@@ -30,7 +30,7 @@
     "@types/theme-ui": "^0.6.0",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
-    "cssnano": "^5.1.10",
+    "cssnano": "^5.1.12",
     "csstype": "^3.1.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
