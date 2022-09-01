@@ -483,13 +483,13 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@changesets/apply-release-plan@^6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@changesets/apply-release-plan/-/apply-release-plan-6.0.3.tgz#cd1113e57ac58d98ea9a52f2d39304c2d398a9dd"
-  integrity sha512-/3JKqtDefs2YSEQI6JQo43/MKTLfhPdrW/BFmqnRpW8UmPB+YXjjQgfjR/2KOaObLOkoixcL3WCK4wNkn/Krmw==
+"@changesets/apply-release-plan@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@changesets/apply-release-plan/-/apply-release-plan-6.1.0.tgz#97d755a7725bdcc1152aa54d8c7fbc85a5bf1e40"
+  integrity sha512-fMNBUAEc013qaA4KUVjdwgYMmKrf5Mlgf6o+f97MJVNzVnikwpWY47Lc3YR1jhC874Fonn5MkjkWK9DAZsdQ5g==
   dependencies:
     "@babel/runtime" "^7.10.4"
-    "@changesets/config" "^2.1.0"
+    "@changesets/config" "^2.1.1"
     "@changesets/get-version-range-type" "^0.3.2"
     "@changesets/git" "^1.4.1"
     "@changesets/types" "^5.1.0"
@@ -498,14 +498,14 @@
     fs-extra "^7.0.1"
     lodash.startcase "^4.4.0"
     outdent "^0.5.0"
-    prettier "^1.19.1"
+    prettier "^2.7.1"
     resolve-from "^5.0.0"
     semver "^5.4.1"
 
-"@changesets/assemble-release-plan@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@changesets/assemble-release-plan/-/assemble-release-plan-5.2.0.tgz#35158dc9b496a4c108936ae8ad776ef855795ff6"
-  integrity sha512-ewY24PEbSec2eKX0+KM7eyENA2hUUp6s4LF9p/iBxTtc+TX2Xbx5rZnlLKZkc8tpuQ3PZbyjLFXWhd1PP6SjCg==
+"@changesets/assemble-release-plan@^5.2.1":
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/@changesets/assemble-release-plan/-/assemble-release-plan-5.2.1.tgz#b66df8d4a5615d4d904b75f7b60faeb64eb1d506"
+  integrity sha512-d6ckasOWlKF9Mzs82jhl6TKSCgVvfLoUK1ERySrTg2TQJdrVUteZue6uEIYUTA7SgMu67UOSwol6R9yj1nTdjw==
   dependencies:
     "@babel/runtime" "^7.10.4"
     "@changesets/errors" "^0.1.4"
@@ -530,25 +530,25 @@
     "@changesets/types" "^5.1.0"
     dotenv "^8.1.0"
 
-"@changesets/cli@^2.24.1":
-  version "2.24.1"
-  resolved "https://registry.yarnpkg.com/@changesets/cli/-/cli-2.24.1.tgz#cb4c13c7712a3cb62fa9199cdda04567faf3d3b2"
-  integrity sha512-7Lz1inqGQjBrXgnXlENtzQ7EmO/9c+09d9oi8XoK4ARqlJe8GpafjqKRobcjcA/TTI7Fn2+cke4CrXFZfVF8Rw==
+"@changesets/cli@^2.24.4":
+  version "2.24.4"
+  resolved "https://registry.yarnpkg.com/@changesets/cli/-/cli-2.24.4.tgz#35b200d49403342cb657b5a941d5c8ef32583eb1"
+  integrity sha512-87JSwMv38zS3QW3062jXZYLsCNRtA08wa7vt3VnMmkGLfUMn2TTSfD+eSGVnKPJ/ycDCvAcCDnrv/B+gSX5KVA==
   dependencies:
     "@babel/runtime" "^7.10.4"
-    "@changesets/apply-release-plan" "^6.0.3"
-    "@changesets/assemble-release-plan" "^5.2.0"
+    "@changesets/apply-release-plan" "^6.1.0"
+    "@changesets/assemble-release-plan" "^5.2.1"
     "@changesets/changelog-git" "^0.1.12"
-    "@changesets/config" "^2.1.0"
+    "@changesets/config" "^2.1.1"
     "@changesets/errors" "^0.1.4"
     "@changesets/get-dependents-graph" "^1.3.3"
-    "@changesets/get-release-plan" "^3.0.12"
+    "@changesets/get-release-plan" "^3.0.14"
     "@changesets/git" "^1.4.1"
     "@changesets/logger" "^0.0.5"
     "@changesets/pre" "^1.0.12"
     "@changesets/read" "^0.5.7"
     "@changesets/types" "^5.1.0"
-    "@changesets/write" "^0.1.9"
+    "@changesets/write" "^0.2.0"
     "@manypkg/get-packages" "^1.1.3"
     "@types/is-ci" "^3.0.0"
     "@types/semver" "^6.0.0"
@@ -569,10 +569,10 @@
     term-size "^2.1.0"
     tty-table "^4.1.5"
 
-"@changesets/config@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@changesets/config/-/config-2.1.0.tgz#bfb663a338fc86e9ea2cb471089aa6dd8dfd7c3d"
-  integrity sha512-43potf+DwYHmH7EY19vxtCq6fqj7UUIrZ4DTwM3pVBqCKxFIytm7GPy7wNAsH06UvMw7NRuOu4QK5HN02GsIrw==
+"@changesets/config@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@changesets/config/-/config-2.1.1.tgz#96c1fec5dcccb4f6d37b56bba64e5c4f3285cca6"
+  integrity sha512-nSRINMqHpdtBpNVT9Eh9HtmLhOwOTAeSbaqKM5pRmGfsvyaROTBXV84ujF9UsWNlV71YxFbxTbeZnwXSGQlyTw==
   dependencies:
     "@changesets/errors" "^0.1.4"
     "@changesets/get-dependents-graph" "^1.3.3"
@@ -608,14 +608,14 @@
     dataloader "^1.4.0"
     node-fetch "^2.5.0"
 
-"@changesets/get-release-plan@^3.0.12":
-  version "3.0.12"
-  resolved "https://registry.yarnpkg.com/@changesets/get-release-plan/-/get-release-plan-3.0.12.tgz#15038a553c7ba9aa764f69cef4705bcfb1be2fdc"
-  integrity sha512-TlpEdpxV5ZQmNeHoD6KNKAc01wjRrcu9/CQqzmO4qAlX7ARA4pIuAxd8QZ1AQXv/l4qhHox7SUYH3VLHfarv5w==
+"@changesets/get-release-plan@^3.0.14":
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/@changesets/get-release-plan/-/get-release-plan-3.0.14.tgz#b4423028a90c63feec12e22c48078f106f8d01f4"
+  integrity sha512-xzSfeyIOvUnbqMuQXVKTYUizreWQfICwoQpvEHoePVbERLocc1tPo5lzR7dmVCFcaA/DcnbP6mxyioeq+JuzSg==
   dependencies:
     "@babel/runtime" "^7.10.4"
-    "@changesets/assemble-release-plan" "^5.2.0"
-    "@changesets/config" "^2.1.0"
+    "@changesets/assemble-release-plan" "^5.2.1"
+    "@changesets/config" "^2.1.1"
     "@changesets/pre" "^1.0.12"
     "@changesets/read" "^0.5.7"
     "@changesets/types" "^5.1.0"
@@ -688,16 +688,16 @@
   resolved "https://registry.yarnpkg.com/@changesets/types/-/types-5.1.0.tgz#e0733b69ddc3efb68524d374d3c44f53a543c8d5"
   integrity sha512-uUByGATZCdaPkaO9JkBsgGDjEvHyY2Sb0e/J23+cwxBi5h0fxpLF/HObggO/Fw8T2nxK6zDfJbPsdQt5RwYFJA==
 
-"@changesets/write@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@changesets/write/-/write-0.1.9.tgz#ac9315d5985f83b251820b8a046155c14a9d21f4"
-  integrity sha512-E90ZrsrfJVOOQaP3Mm5Xd7uDwBAqq3z5paVEavTHKA8wxi7NAL8CmjgbGxSFuiP7ubnJA2BuHlrdE4z86voGOg==
+"@changesets/write@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@changesets/write/-/write-0.2.0.tgz#59821dc811d04c0c1908ae6ee6ce346dfa312420"
+  integrity sha512-iKHqGYXZvneRzRfvEBpPqKfpGELOEOEP63MKdM/SdSRon40rsUijkTmsGCHT1ueLi3iJPZPmYuZJvjjKrMzumA==
   dependencies:
     "@babel/runtime" "^7.10.4"
     "@changesets/types" "^5.1.0"
     fs-extra "^7.0.1"
     human-id "^1.0.2"
-    prettier "^1.19.1"
+    prettier "^2.7.1"
 
 "@emotion/babel-plugin@^11.3.0":
   version "11.7.2"
@@ -5284,11 +5284,6 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
-
-prettier@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
-  integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
 
 prettier@^2.7.1:
   version "2.7.1"
