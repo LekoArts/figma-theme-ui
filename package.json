@@ -36,7 +36,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "figma-plugin-ds-svelte": "^1.2.0",
+    "figma-plugin-ds-svelte": "^1.4.3",
     "jest": "^27.5.1",
     "parse-color": "^1.0.0",
     "postcss": "^8.4.17",
