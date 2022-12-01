@@ -827,10 +827,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@figma/plugin-typings@^1.55.1":
-  version "1.55.1"
-  resolved "https://registry.yarnpkg.com/@figma/plugin-typings/-/plugin-typings-1.55.1.tgz#b974e929c2d1bdf051104ec89701b25c8ac2bcd7"
-  integrity sha512-gNyAFMA83oNJ8X4xrMjs49CCPwfRRdNepvZUx4gxS5/GBnZqV+rhEkM9crgJrynrE1VgxILLjQIPgUxxSNBWJQ==
+"@figma/plugin-typings@^1.56.0":
+  version "1.56.0"
+  resolved "https://registry.yarnpkg.com/@figma/plugin-typings/-/plugin-typings-1.56.0.tgz#218f630d3602884768558fa38fdb3b451cdbb68f"
+  integrity sha512-vvxmZffirG2i//EJtMcpCalEQS0OjcV5fXG21eVu7ovQJWJrvTlTNPmhUIx9RMJC0qxhIuqqjaf15Rom5AzAIg==
 
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
