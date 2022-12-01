@@ -40,7 +40,7 @@
     "jest": "^27.5.1",
     "parse-color": "^1.0.0",
     "postcss": "^8.4.19",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "rollup": "^2.79.1",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svelte": "^7.1.0",
