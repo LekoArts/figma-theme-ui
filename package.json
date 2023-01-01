@@ -17,7 +17,7 @@
     "changeset": "changeset"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.25.2",
     "@figma/plugin-typings": "^1.56.0",
     "@rollup/plugin-commonjs": "^21.1.0",
