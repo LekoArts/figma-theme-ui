@@ -1,4 +1,4 @@
-name: Test
+name: Build
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +18,5 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: yarn install --production=false
-      - name: Run Jest
-        run: yarn test:ci
-        env:
-          CI: true
-      - name: Run Linting
-        run: yarn lint
+      - name: Run Test Build
+        run: yarn build

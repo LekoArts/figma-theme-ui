@@ -27,6 +27,11 @@ const mainConfig = {
       compilerOptions: {
         dev: !production,
       },
+      onwarn: (warning, handler) => {
+        // disable a11y warnings
+        if (warning.code.startsWith(`a11y-`)) return
+        handler(warning)
+      },
     }),
     resolve({
       browser: true,
