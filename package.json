@@ -32,7 +32,7 @@
     "@typescript-eslint/parser": "^5.60.1",
     "cssnano": "^5.1.15",
     "csstype": "^3.1.2",
-    "eslint": "^8.41.0",
+    "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
