@@ -39,7 +39,7 @@
     "figma-plugin-ds-svelte": "^1.4.3",
     "jest": "^29.7.0",
     "parse-color": "^1.0.0",
-    "postcss": "^8.4.38",
+    "postcss": "^8.4.39",
     "prettier": "^2.8.8",
     "rollup": "^3.29.4",
     "rollup-plugin-postcss": "^4.0.2",
