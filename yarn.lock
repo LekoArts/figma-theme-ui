@@ -875,10 +875,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@figma/plugin-typings@^1.103.0":
-  version "1.103.0"
-  resolved "https://registry.yarnpkg.com/@figma/plugin-typings/-/plugin-typings-1.103.0.tgz#106bcefa197bd80c546fca0f7c1303491d830e74"
-  integrity sha512-hinDFmafuvjiOSHpbaqLKTiFVBksjFgEuAIQ0OpF9BhkCqIpJqrEgGwJkOnvLtodvaJaabw5kUce1xaIibRciw==
+"@figma/plugin-typings@^1.106.0":
+  version "1.106.0"
+  resolved "https://registry.yarnpkg.com/@figma/plugin-typings/-/plugin-typings-1.106.0.tgz#3145a3c3d1ad90eba5c60329f78583376f9f49e3"
+  integrity sha512-fUWranOKUEDJe80GUAgs7gLyMdkiBdwi72QPx1XctB62ecmedpTO/qKx/C7GcoxeRVQ90n+NWS7zpSInWMTJkA==
 
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
