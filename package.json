@@ -19,7 +19,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.31.0",
-    "@figma/plugin-typings": "^1.124.0",
+    "@figma/plugin-typings": "^1.125.0",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-html": "^1.1.0",
     "@rollup/plugin-node-resolve": "^15.3.1",
